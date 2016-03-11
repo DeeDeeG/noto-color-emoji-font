@@ -7,10 +7,12 @@ emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
 but of the operating systems and applications. Regular B&W outline emoji are
 included for backwards/fallback compatibility.
 
-[Do you like Emoji One graphics better?][2] **You can use this now**
+[Do you like Emoji One graphics better?][2]
 
 [1]: https://github.com/twitter/twemoji
 [2]: https://github.com/eosrei/emojione-color-font
+
+Get the **alpha** version from releases: https://github.com/eosrei/twemoji-color-font/releases
 
 # More details coming soon!
 
