@@ -70,3 +70,13 @@ EOF
 fc-cache -f -v
 #Done!
 ```
+
+## Install on OS X
+
+If you use [Homebrew](http://brew.sh), you can tap the `caskroom/fonts`
+keg and install the font using `brew`.
+
+```sh
+$ brew tap caskroom/fonts  # Only required if you haven't tapped the fonts keg
+$ brew cask install font-twitter-emoji-color
+```
