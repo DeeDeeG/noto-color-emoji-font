@@ -80,7 +80,7 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
 An AUR package is available: https://aur.archlinux.org/packages/twemoji-color-font
 
 ```sh
-$ pacman -S twemoji-color-font
+$ yaourt -S twemoji-color-font
 ```
 
 ## Install on OS X
