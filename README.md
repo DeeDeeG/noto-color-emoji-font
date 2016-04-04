@@ -1,86 +1,161 @@
 # Twitter Color Emoji SVGinOT Font
-A color and B&W emoji SVGinOT font built primarily from the
-[Twitter Emoji for Everyone][1] artwork.
+A color and B&W emoji SVGinOT font built from the
+[Twitter Emoji for Everyone][1] artwork with support for [ZWJ][2],
+[skin tone diversity][3] and [country flags][4].
 
-The font works in all operating systems, but will currently only show color
+The font works in all operating systems, but will *currently* only show color
 emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
 but of the operating systems and applications. Regular B&W outline emoji are
 included for backwards/fallback compatibility.
 
-[Do you prefer Emoji One graphics?][2]
+[Do you prefer Emoji One graphics?][5]
 
 [1]: https://github.com/twitter/twemoji
-[2]: https://github.com/eosrei/emojione-color-font
+[2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
+[3]: http://www.unicode.org/reports/tr51/#Diversity
+[4]: http://www.unicode.org/reports/tr51/#Flags
+[5]: https://github.com/eosrei/emojione-color-font
 
-Get the **alpha** version from releases: https://github.com/eosrei/twemoji-color-font/releases
+## Table of Contents
 
-## Example
+* [Examples](#examples)
+* [What is SVGinOT?](#what-is-svginot)
+* [Install on Linux](#install-on-linux)
+* [Install on OS X](#install-on-os-x)
+* [Install on Windows](#install-on-windows)
+* [Known issues](#known-issues)
+* [Building](#building)
+* [License](#license)
 
-Mini demo in Firefox/Linux.
+## Examples
+
+Demo in Firefox on Linux.
 ![Firefox color emoji in Linux](images/twemoji-font-demo.png?raw=true)
 
-# More details coming soon!
+## What is SVGinOT?
+*SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
+and Open Font Format fonts. It allows font creators to embed complete SVG files
+within a font enabling full color and even animations. There are more details
+in the [SVGinOT proposal][6] and the [OpenType SVG table specifications][7].
+
+SVGinOT Demos (Firefox only):
+
+* https://www.adobe.com/devnet-apps/type/svgopentype.html
+* https://hacks.mozilla.org/2014/10/svg-colors-in-opentype-fonts/
+
+[6]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[7]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Install on Linux
+The font can be installed for a user or system-wide. Get the latest version
+from releases: https://github.com/eosrei/twemoji-color-font/releases
 
-The fontconfig below is required to override `DejaVuSans` b&w emoji
-on most Linux distributions.
+Install for the current user without root:
+```sh
+# 1. Download the latest version
+wget https://github.com/eosrei/twemoji-color-font/releases/download/v1.0-beta1/TwitterColorEmoji-SVGinOT-1.0-beta1.zip
+# 2. Uncompress the zip file
+unzip -o TwitterColorEmoji-SVGinOT-1.0-beta1.zip
+# 3. Run the installer
+./install.sh
+```
 
-The font is available to Arch Linux users via the [AUR](https://aur.archlinux.org/packages/twemoji-color-font) package. `$ yaourt -S twemoji-color-font`
+*Note: This requires `Bitstream Vera` is installed and will change your
+systems default serif, sans-serif and monospace fonts.*
+
+### Why Bitstream Vera
+The default serif, sans-serif and monospace font for most Linux distributions is
+`DejaVu`. `DejaVu` includes a wide range of symbols which override the
+`Twitter Color Emoji` characters. The previous solution was to make
+`Twitter Color Emoji` the default system font, but that causes a number of issues.
+A better solution is a different font that doesn't override any emoji characters
+such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
+`DejaVu`, so it's not very different.
+
+### Options
+The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
+want to try them. Primary issues are the 0x2639 and 0x263a characters.
+
+### Arch Linux
+An AUR package is available: https://aur.archlinux.org/packages/twemoji-color-font
 
 ```sh
-# 1. Install the font
-
-# 2. Create a font config directory
-mkdir -p ~/.config/fontconfig/
-
-# 3. Override your defaults by creating a ~/.config/fontconfig/fonts.conf
-cat << 'EOF' > ~/.config/fontconfig/fonts.conf
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-
-<fontconfig>
-  <!--
-  Make Twitter Color Emoji the initial fallback font for sans-serif, sans, and
-  monospace. Override any specific requests for Apple Color Emoji.
-  -->
-  <match>
-    <test name="family"><string>sans-serif</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Twitter Color Emoji</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>serif</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Twitter Color Emoji</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>monospace</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Twitter Color Emoji</string>
-    </edit>
-  </match>
-  <match>
-    <test name="family"><string>Apple Color Emoji</string></test>
-    <edit name="family" mode="prepend" binding="strong">
-      <string>Twitter Color Emoji</string>
-    </edit>
-  </match>
-</fontconfig>
-EOF
-# 4. Just to be sure, clear your font cache and restart Firefox
-fc-cache -f -v
-#Done!
+$ pacman -S twemoji-color-font
 ```
 
 ## Install on OS X
+Both SVGinOT versions are available from releases:
+https://github.com/eosrei/tweomij-color-font/releases
 
-If you use [Homebrew](http://brew.sh), you can tap the `caskroom/fonts`
-keg and install the font using `brew`.
+1. `TwitterColorEmoji-SVGinOT-1.0-beta1.zip` - The regular version of the font
+   installs like any other font and can be specifically selected, but OS X will
+   default to the `Apple Color Emoji` font for emojis.
+2. `TwitterColorEmoji-SVGinOT-OSX-1.0-beta1.zip` - A hack to replace the `Apple
+   Color Emoji` font by [using the same internal name][8]. Install and accept
+   the warning in Font Book.
+
+A [Homebrew](http://brew.sh) package is available.
 
 ```sh
-$ brew tap caskroom/fonts  # Only required if you haven't tapped the fonts keg
-$ brew cask install font-twitter-emoji-color
+# Tap the caskroom/fonts keg, if needed.
+brew tap caskroom/fonts
+# Install the font using brew
+brew cask install font-twitter-emoji-color
 ```
+
+[8]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+
+*Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
+Chrome will use the fallback black and white emoji.*
+
+## Install on Windows
+
+The font installs like any other font and can be specifically selected, but
+the system will default to the `Segoe UI Emoji` font.
+
+It can be manually selected in CSS, but making it the default is still TBD.
+
+## Known issues
+
+* [Symbols/emoji in monospace formatted text cause incorrect character
+  alignment][9]. The whitespace character widths from the most recently selected
+  fallback font are used in Pango/GTK applications.
+* [The Firefox internal font cache is not cleared when the fontconfig
+  changes][10]. Manually clear it in `about.config`, by setting
+  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`, restarting, and
+  setting it back to `true`.
+
+[9]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
+
+## Building
+The build process has only been tested on Ubuntu Linux.
+
+Overview:
+
+1. B&W SVGs are generated on-the-fly from the color SVGs
+2. The B&W SVGs are imported based on their filename to create either regular
+   glyphs or ligature glyphs.
+3. The color SVGs are imported to override both types of glyphs.
+
+Required applications:
+
+* Inkscape
+* Imagemagick
+* mkbitmap
+* potrace
+* FontTools
+* FontForge
+* SVGO
+* [SCFBuild][11] *(created for this project!)*
+* make
+
+[11]: https://github.com/eosrei/scfbuild
+Run: `make`
+
+Or faster with multiple builds: `make -j 4`
+
+## License
+
+The artwork and TTF fonts are licensed CC-BY-4.0. Please see
+[LICENSE.md](LICENSE.md) for details.
