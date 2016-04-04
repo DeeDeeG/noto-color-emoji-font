@@ -8,10 +8,12 @@ TMP := /tmp
 # Where to find scfbuild?
 SCFBUILD := SCFBuild/bin/scfbuild
 
-VERSION := 1.0-alpha
+VERSION := 1.0-beta1
 FONT_PREFIX := build/TwitterColorEmoji-SVGinOT
 REGULAR_FONT := $(FONT_PREFIX).ttf
 REGULAR_ZIP := $(FONT_PREFIX)-$(VERSION).zip
+OSX_FONT := $(FONT_PREFIX)-OSX.ttf
+OSX_ZIP := $(FONT_PREFIX)-OSX-$(VERSION).zip
 
 # There are two SVG source directories to keep the assets separate.
 SVG_TWEMOJI := assets/twemoji-svg
@@ -27,14 +29,18 @@ SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_ST
 
 .PHONY: all package clean
 
-all: $(REGULAR_FONT)
+all: $(REGULAR_FONT) $(OSX_FONT)
 
 package: all
-	rm -f $(REGULAR_ZIP)
+	rm -f $(REGULAR_ZIP) $(OSX_ZIP)
 	7z a -tzip -mx=9 $(REGULAR_ZIP) ./$(REGULAR_FONT)
+	7z a -tzip -mx=9 $(OSX_ZIP) ./$(OSX_FONT)
 
 $(REGULAR_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
 	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"
+
+$(OSX_FONT): $(SVG_TRACE_FILES) $(SVG_COLOR_FILES)
+	$(SCFBUILD) -c scfbuild-osx.yml -o $(OSX_FONT) --font-version="$(VERSION)"
 
 # Create black SVG traces of the color SVGs to use as glyphs.
 # 1. Make the EmojiOne SVG into a PNG with Inkscape

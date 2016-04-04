@@ -1,5 +1,5 @@
 # SCFBuild configuration file for Twitter Color Emoji
-output_file: build/TwitterEmojiColor-SVGinOT.ttf
+output_file: build/TwitterEmojiColor-SVGinOT-OSX.ttf
 verbose: False
 glyph_svg_dir: build/svg-trace
 color_svg_dir: build/svg-color
@@ -23,8 +23,8 @@ table_name:
   unique_id: Twitter Color Emoji SVGinOT eosrei.net
   full_name: Twitter Color Emoji SVGinOT
   #version:
-  # No spaces in PostScript Names
-  postscript_name: TwitterColorEmojiSVGinOT
+  # Use the same postscript name as the Apple Color Emoji font to overide it.
+  postscript_name: AppleColorEmoji
   #trademark:
   manufacturer: eosrei.net
   designer: Twitter, Inc.
