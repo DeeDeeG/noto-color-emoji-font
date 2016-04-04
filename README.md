@@ -53,9 +53,9 @@ from releases: https://github.com/eosrei/twemoji-color-font/releases
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/eosrei/twemoji-color-font/releases/download/v1.0-beta1/TwitterColorEmoji-SVGinOT-1.0-beta1.zip
+wget https://github.com/eosrei/twemoji-color-font/releases/download/v1.0-beta1/TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
 # 2. Uncompress the zip file
-unzip -o TwitterColorEmoji-SVGinOT-1.0-beta1.zip
+unzip -o TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
 # 3. Run the installer
 ./install.sh
 ```
