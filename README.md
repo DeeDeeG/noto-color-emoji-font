@@ -129,8 +129,6 @@ It can be manually selected in CSS, but making it the default is still TBD.
 [10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
 
 ## Building
-The build process has only been tested on Ubuntu Linux.
-
 Overview:
 
 1. B&W SVGs are generated on-the-fly from the color SVGs
@@ -138,22 +136,31 @@ Overview:
    glyphs or ligature glyphs.
 3. The color SVGs are imported to override both types of glyphs.
 
-Required applications:
-
+Requires:
 * Inkscape
 * Imagemagick
-* mkbitmap
-* potrace
-* FontTools
-* FontForge
+* potrace/mkbitmap
+* FontTools 3.0+
+* FontForge 20160405+
 * SVGO
-* [SCFBuild][11] *(created for this project!)*
 * make
+* [SCFBuild][12] *(Created for this project!)*
 
-[11]: https://github.com/eosrei/scfbuild
-Run: `make`
+[12]: https://github.com/eosrei/scfbuild
 
-Or faster with multiple builds: `make -j 4`
+Setup and build on Ubuntu 14.04 LTS:
+```sh
+sudo add-apt-repository ppa:fontforge/fontforge
+sudo apt-get update
+sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
+python-fontforge python-pip imagemagick git make
+sudo npm install -g svgo
+sudo pip install fonttools
+git clone https://github.com/eosrei/twemoji-color-font.git
+cd twemoji-color-font
+git clone https://github.com/eosrei/scfbuild.git SCFBuild
+make -j 4
+```
 
 ## License
 
