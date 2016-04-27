@@ -120,10 +120,10 @@ It can be manually selected in CSS, but making it the default is still TBD.
 * [Symbols/emoji in monospace formatted text cause incorrect character
   alignment][9]. The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [The Firefox internal font cache is not cleared when the fontconfig
-  changes][10]. Manually clear it in `about.config`, by setting
-  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`, restarting, and
-  setting it back to `true`.
+* [Some font families are not matched correctly in Linux Firefox <47][10].
+  Workaround: Open `about:config` set
+  `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
+  Fixed in Firefox 47+.
 
 [9]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
 [10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1254245
