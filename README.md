@@ -4,11 +4,11 @@ A color and B&W emoji SVGinOT font built from the
 [skin tone diversity][3] and [country flags][4].
 
 The font works in all operating systems, but will *currently* only show color
-emoji in Mozilla Firefox and Thunderbird. This is not a limitation of the font,
-but of the operating systems and applications. Regular B&W outline emoji are
-included for backwards/fallback compatibility.
+emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
+is not a limitation of the font, but of the operating systems and applications.
+Regular B&W outline emoji are included for backwards/fallback compatibility.
 
-[Do you prefer Emoji One graphics?][5]
+[Do you prefer EmojiOne graphics?][5]
 
 [1]: https://github.com/twitter/twemoji
 [2]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
