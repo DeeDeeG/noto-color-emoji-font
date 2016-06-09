@@ -50,16 +50,6 @@ SVGinOT Demos (Firefox only):
 The font can be installed for a user or system-wide. Get the latest version
 from releases: https://github.com/eosrei/twemoji-color-font/releases
 
-Install for the current user without root:
-```sh
-# 1. Download the latest version
-wget https://github.com/eosrei/twemoji-color-font/releases/download/v1.0-beta1/TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
-# 2. Uncompress the zip file
-unzip -o TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
-# 3. Run the installer
-./install.sh
-```
-
 *Note: This requires `Bitstream Vera` is installed and will change your
 systems default serif, sans-serif and monospace fonts.*
 
@@ -70,17 +60,50 @@ The default serif, sans-serif and monospace font for most Linux distributions is
 `Twitter Color Emoji` the default system font, but that causes a number of issues.
 A better solution is a different font that doesn't override any emoji characters
 such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
-`DejaVu`, so it's not very different.
+`DejaVu`, so it's not very different. 99%+ of people will not notice the
+difference.
 
 ### Options
 The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
 want to try them. Primary issues are the 0x2639 and 0x263a characters.
 
-### Arch Linux
-An AUR package is available: https://aur.archlinux.org/packages/twemoji-color-font
+### Manual install on any Linux
+Install for the current user without root:
+```sh
+# 1. Download the latest version
+wget https://github.com/eosrei/twemoji-color-font/releases/download/v1.0-beta1/TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
+# 2. Uncompress the zip file
+unzip -o TwitterColorEmoji-SVGinOT-Linux-1.0-beta1.zip
+# 3. Run the installer
+./install.sh
+```
+
+### Install on Ubuntu Linux
+Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts
 
 ```sh
-$ yaourt -S twemoji-color-font
+sudo apt-add-repository ppa:eosrei/fonts
+sudo apt-get update
+sudo apt-get install fonts-twemoji-svginot
+```
+
+### Install on Arch Linux
+AUR package: https://aur.archlinux.org/packages/twemoji-color-font/
+
+```sh
+yaourt -S twemoji-color-font
+```
+
+### Install on Gentoo Linux
+Gentoo repository: https://github.com/jorgicio/jorgicio-gentoo
+
+```sh
+# Install layman using Portage with USE="git" enabled, the default.
+emerge layman
+# Add the repo.
+layman -s jorgicio
+# Install the package.
+emerge twemoji-color-font
 ```
 
 ## Install on OS X
