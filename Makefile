@@ -16,6 +16,8 @@ OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
 OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
 DEB_PACKAGE := fonts-noto-color-emoji-svginot
+WINDOWS_TOOLS := windows
+WINDOWS_PACKAGE := build/$(FONT_PREFIX)-Win-$(VERSION)
 
 # There are two SVG source directories to keep the assets separate
 # from the additions
@@ -32,12 +34,12 @@ SVG_STAGE_FILES := $(patsubst $(SVG_EXTRA)/%.svg, build/stage/%.svg, $(SVG_STAGE
 SVG_BW_FILES := $(patsubst build/stage/%.svg, build/svg-bw/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-.PHONY: all package regular-package linux-package osx-package copy-extra clean
+.PHONY: all package regular-package linux-package osx-package windows-package copy-extra clean
 
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package osx-package deb-package
+package: regular-package linux-package osx-package windows-package deb-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -66,6 +68,16 @@ osx-package: $(OSX_FONT)
 	cp LICENSE* $(OSX_PACKAGE)
 	cp README.md $(OSX_PACKAGE)
 	7z a -tzip -mx=9 $(OSX_PACKAGE).zip ./$(OSX_PACKAGE)
+
+windows-package: $(REGULAR_FONT)
+	rm -f $(WINDOWS_PACKAGE).zip
+	rm -rf $(WINDOWS_PACKAGE)
+	mkdir $(WINDOWS_PACKAGE)
+	cp $(REGULAR_FONT) $(WINDOWS_PACKAGE)
+	cp LICENSE* $(WINDOWS_PACKAGE)
+	cp README.md $(WINDOWS_PACKAGE)
+	cp $(WINDOWS_TOOLS)/* $(WINDOWS_PACKAGE)
+	7z a -tzip -mx=9 $(WINDOWS_PACKAGE).zip ./$(WINDOWS_PACKAGE)
 
 deb-package: linux-package
 	rm -rf build/$(DEB_PACKAGE)-$(VERSION)
