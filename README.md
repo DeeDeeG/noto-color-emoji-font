@@ -161,29 +161,31 @@ Chrome will use the fallback black and white emoji.*
 There are two install options for Windows. Both SVGinOT versions are available
 from releases: https://github.com/eosrei/emojione-color-font/releases
 
-### `EmojiOneColor-SVGinOT-1.2.zip`
+### Standard install
 
-The regular version of the font
-installs like any other font and can be specifically selected, but Windows
-will default to the `Segoe UI Emoji` font for emojis.
+The regular version of the font installs like any other font and can be
+specifically selected, but Windows will default to the `Segoe UI Emoji`
+font for emoji characters. Download:
+https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3.zip
 
-### Replacing the Windows default Emoji
+### Replace the default Windows emoji fonts
 
-Because Windows 7, 8, 10 use Emoji in both Segoe UI Symbol and Segoe UI Emoji,
-to be the default emoji, we need to replace both, but keep the existing symbol
-characters from Segoe UI Symbol. 
+Windows 7, 8, 10 use emoji from both Segoe UI Symbol and Segoe UI Emoji. We
+need to replace both fonts, but keep the existing symbol characters from
+Segoe UI Symbol.
+
 This package contains an install script that will generate both fonts (or
-in Windows 7, just Segoe UI Symbol), and install them for you. Running the
+in Windows 7, just Segoe UI Symbol) and install them for you. Running the
 install script requires both [Python][16] and pip in the PATH.
 
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.5 to PATH" and finish the install process.
 3. Download EmojiOne Color Windows package from releases:
-   https://github.com/eosrei/emojione-color-font/releases
-4. Uncompress the file
-5. Open the new EmojiOneColor directory
-7. Run install.cmd. Note: This will take some time.
-8. Install the new fonts when requested.
+https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3-Win.zip
+4. Uncompress the file.
+5. Open the new EmojiOneColor directory.
+7. Run install.cmd. *Note: This will take some time.*
+8. Install both new fonts when requested.
 9. Done!
 
 [16]:https://www.python.org/downloads/windows/
@@ -223,7 +225,7 @@ git clone https://github.com/DeeDeeG/noto-color-emoji-font.git
 cd noto-color-emoji-font
 git clone https://github.com/eosrei/scfbuild.git SCFBuild
 # Type a number after the "-j" in the following command to control number of threads.
-# The build involves an extremely large number of short tasks (several per glyph). 
+# The build involves an extremely large number of short tasks (several per glyph).
 # Due to starting and stoping on each thread, CPU usage can be well below 100%, for strong processors.
 # If your machine is powerful, a higher number of threads per-core will be faster and use more of your CPU power.
 # basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
@@ -232,10 +234,10 @@ make -j 4
 sudo apt-get install devscripts
 # Which allows you to build the DEB_PACKAGE target, and:
 make package -j 4
-# 
+#
 # "make package" will run without devscripts installed, and it will
 # make the Linux and MacOS packages, but it won't build the .deb package.
-# 
+#
 # It's good to run "make package" before running a simple "make," if
 # you want the packages, or else you will find your computer
 # re-building the ttf font files in order to satisfy the dependencies
@@ -244,7 +246,6 @@ make package -j 4
 
 ## License
 
-The TTF fonts are licensed CC-BY-4.0. 
-The SVG artwork is licensed Apache 2.0. 
+The TTF fonts are licensed CC-BY-4.0.
+The SVG artwork is licensed Apache 2.0.
 Please see [LICENSE.md](LICENSE.md) for details.
-
