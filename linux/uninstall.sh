@@ -1,6 +1,6 @@
 #!/bin/sh
 #https://github.com/eosrei/twemoji-color-font
-echo "Twitter Color Emoji font uninstaller for Linux\n"
+echo "Noto Color Emoji font uninstaller for Linux\n"
 
 set -v
 
@@ -10,8 +10,8 @@ if [ -z "$XDG_DATA_HOME" ];then
 fi
 FONTCONFIG=$HOME/.config/fontconfig
 
-rm $XDG_DATA_HOME/fonts/TwitterColorEmoji-SVGinOT.ttf
-rm $FONTCONFIG/conf.d/56-twemoji-color.conf
+rm $XDG_DATA_HOME/fonts/NotoColorEmoji-SVGinOT.ttf
+rm $FONTCONFIG/conf.d/56-noto-color-emoji.conf
 
 echo "Clearing font cache"
 fc-cache -f

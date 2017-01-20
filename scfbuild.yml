@@ -1,5 +1,5 @@
 # SCFBuild configuration file for Twitter Color Emoji
-output_file: build/TwitterEmojiColor-SVGinOT.ttf
+output_file: build/NotoColorEmoji-SVGinOT.ttf
 verbose: False
 glyph_svg_dir: build/svg-bw
 color_svg_dir: build/svg-color
@@ -15,23 +15,23 @@ color_transform: translate(0 -6.75)
 width_space: 561
 table_name:
   copyright: >
-    Copyright 2016 Brad Erickson CC-BY-4.0
-    Copyright 2016 Twitter, Inc. CC-BY-4.0
-  family: Twitter Color Emoji
+    Copyright 2016 DeeDeeG CC-BY-4.0
+    Copyright 2016 Google Inc. CC-BY-4.0
+  family: Noto Color Emoji
   # Subfamily is also called Style or Weight. Often set to: Regular
   subfamily: Regular
-  unique_id: Twitter Color Emoji SVGinOT eosrei.net
-  full_name: Twitter Color Emoji SVGinOT
+  unique_id: Noto Color Emoji SVGinOT github.com/DeeDeeG
+  full_name: Noto Color Emoji SVGinOT
   #version:
   # No spaces in PostScript Names
-  postscript_name: TwitterColorEmojiSVGinOT
+  postscript_name: NotoColorEmojiSVGinOT
   #trademark:
-  manufacturer: eosrei.net
-  designer: Twitter, Inc.
+  manufacturer: github.com/DeeDeeG
+  designer: Google Inc.
   description: >
-    A SVGinOT color emoji font using the Twitter Emoji for Everyone set:
-    https://github.com/eosrei/twemoji-color-font
-  url_vendor: https://github.com/eosrei/twemoji-color-font
-  url_designer: https://github.com/twitter/twemoji
+    A SVGinOT color emoji font using the Noto Color Emoji set:
+    https://github.com/DeeDeeG/noto-color-emoji-font
+  url_vendor: https://github.com/DeeDeeG/
+  url_designer: https://github.com/googlei18n/noto-emoji
   license: Creative Commons Attribution 4.0 International
   url_license: http://creativecommons.org/licenses/by/4.0/

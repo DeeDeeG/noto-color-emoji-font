@@ -9,25 +9,25 @@ TMP := /dev/shm
 SCFBUILD := SCFBuild/bin/scfbuild
 
 VERSION := 1.1
-FONT_PREFIX := TwitterColorEmoji-SVGinOT
+FONT_PREFIX := NotoColorEmoji-SVGinOT
 REGULAR_FONT := build/$(FONT_PREFIX).ttf
 REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
 OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
 OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
-DEB_PACKAGE := fonts-twemoji-svginot
+DEB_PACKAGE := fonts-noto-color-emoji-svginot
 
 # There are two SVG source directories to keep the assets separate
 # from the additions
-SVG_TWEMOJI := assets/twemoji-svg
+SVG_NOTOCOLOREMOJI := assets/noto-color-emoji-svg
 # Currently empty
 SVG_EXTRA := assets/svg
 # B&W only glyphs which will not be processed.
 SVG_EXTRA_BW := assets/svg-bw
 
 # Create the lists of traced and color SVGs
-SVG_FILES := $(wildcard $(SVG_TWEMOJI)/*.svg) $(wildcard $(SVG_EXTRA)/*.svg)
-SVG_STAGE_FILES := $(patsubst $(SVG_TWEMOJI)/%.svg, build/stage/%.svg, $(SVG_FILES))
+SVG_FILES := $(wildcard $(SVG_NOTOCOLOREMOJI)/*.svg) $(wildcard $(SVG_EXTRA)/*.svg)
+SVG_STAGE_FILES := $(patsubst $(SVG_NOTOCOLOREMOJI)/%.svg, build/stage/%.svg, $(SVG_FILES))
 SVG_STAGE_FILES := $(patsubst $(SVG_EXTRA)/%.svg, build/stage/%.svg, $(SVG_STAGE_FILES))
 SVG_BW_FILES := $(patsubst build/stage/%.svg, build/svg-bw/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
@@ -104,7 +104,7 @@ build/svg-color/%.svg: build/staging/%.svg | build/svg-color
 	svgo -i $< -o $@
 
 # Copy the files from multiple directories into one source directory
-build/staging/%.svg: $(SVG_TWEMOJI)/%.svg | build/staging
+build/staging/%.svg: $(SVG_NOTOCOLOREMOJI)/%.svg | build/staging
 	cp $< $@
 
 build/staging/%.svg: $(SVG_MORE)/%.svg | build/staging

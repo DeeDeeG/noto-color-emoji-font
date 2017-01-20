@@ -1,6 +1,6 @@
 #!/bin/sh
-#https://github.com/eosrei/twemoji-color-font
-echo "Twitter Color Emoji font installer for Linux\n"
+#https://github.com/DeeDeeG/noto-color-emoji-font
+echo "Noto Color Emoji font installer for Linux\n"
 
 # Check for Bitstream Vera
 fc-list | grep "Bitstream Vera" > /dev/null
@@ -20,15 +20,15 @@ if [ -z "$XDG_DATA_HOME" ];then
 fi
 
 # Remove font from old directory if exists (temporary backwards compat)
-if [ -f $HOME/.fonts/TwitterColorEmoji-SVGinOT.ttf ];then
+if [ -f $HOME/.fonts/NotoColorEmoji-SVGinOT.ttf ];then
   echo "Removing the font from $HOME/.fonts"
-  rm $HOME/.fonts/TwitterColorEmoji-SVGinOT.ttf
+  rm $HOME/.fonts/NotoColorEmoji-SVGinOT.ttf
 fi
 
 # Create a user font directory
 mkdir -p $XDG_DATA_HOME/fonts
 echo "Installing the font in: $XDG_DATA_HOME/fonts/"
-cp TwitterColorEmoji-SVGinOT.ttf $XDG_DATA_HOME/fonts/
+cp NotoColorEmoji-SVGinOT.ttf $XDG_DATA_HOME/fonts/
 
 # Create a font config directory
 FONTCONFIG=$HOME/.config/fontconfig
@@ -40,7 +40,7 @@ if [ -f $FONTCONFIG/fonts.conf ];then
   cp $FONTCONFIG/fonts.conf $FONTCONFIG/fonts.bak
 fi
 # Install fonts.conf
-cp fontconfig/56-twemoji-color.conf $FONTCONFIG/conf.d/
+cp fontconfig/56-noto-color-emoji.conf $FONTCONFIG/conf.d/
 
 echo "Clearing font cache"
 fc-cache -f
