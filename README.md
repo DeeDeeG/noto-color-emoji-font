@@ -45,7 +45,7 @@ Demo image coming soon?
 *SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
 and Open Font Format fonts. It allows font creators to embed complete SVG files
 within a font enabling full color and even animations. There are more details
-in the [SVGinOT proposal][6] and the [OpenType SVG table specifications][7].
+in the [SVGinOT proposal][7] and the [OpenType SVG table specifications][8].
 
 SVGinOT Font demos (Firefox only):
 
@@ -53,12 +53,12 @@ SVGinOT Font demos (Firefox only):
 * http://xerographer.github.io/reinebow/
 * http://xerographer.github.io/multicoloure/
 
-[6]: https://www.w3.org/2013/10/SVG_in_OpenType/
-[7]: https://www.microsoft.com/typography/otspec/svg.htm
+[7]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[8]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Install on Linux
 The font can be installed for a user or system-wide. Get the latest version
-from releases: *https://github.com/eosrei/twemoji-color-font/releases* (WIP)
+from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
 *Note: This requires `Bitstream Vera` is installed and will change your
 systems default serif, sans-serif and monospace fonts.*
@@ -79,33 +79,33 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
 
 ### Known issues
 
-* [Symbols/emoji in monospace formatted text cause incorrect character alignment][8].
+* [Symbols/emoji in monospace formatted text cause incorrect character alignment][9].
   The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [[Issue #31][9]] [Some font families are not matched correctly in Linux Firefox][10].
+* [[Issue #31][10]] [Some font families are not matched correctly in Linux Firefox][11].
   Workaround: Open `about:config` set
   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
-  [Note: May cause crashes in Firefox <48.][11]
+  [Note: May cause crashes in Firefox <48.][12]
 
-[8]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
-[9]:https://github.com/eosrei/emojione-color-font/issues/31
-[10]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
-[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
+[9]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[10]:https://github.com/eosrei/emojione-color-font/issues/31
+[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
+[12]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
 
 ### Manual install on any Linux (wip)
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.1/TwitterColorEmoji-SVGinOT-Linux-1.1.tar.gz
+wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.0-noto/NotoColorEmoji-SVGinOT-Linux-1.0.tar.gz
 # 2. Uncompress the file
-tar zxf TwitterColorEmoji-SVGinOT-Linux-1.1.tar.gz
+tar zxf NotoColorEmoji-SVGinOT-Linux-1.0.tar.gz
 # 3. Run the installer
-cd TwitterColorEmoji-SVGinOT-Linux-1.1
+cd NotoColorEmoji-SVGinOT-Linux-1.0
 ./install.sh
 ```
 
-### Install on Ubuntu Linux
-Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts (wip)
+### Install on Ubuntu Linux (wip)
+Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts
 
 ```sh
 sudo apt-add-repository ppa:eosrei/fonts
@@ -113,15 +113,15 @@ sudo apt-get update
 sudo apt-get install fonts-twemoji-svginot
 ```
 
-### Install on Arch Linux
-AUR package: https://aur.archlinux.org/packages/twemoji-color-font/ (wip)
+### Install on Arch Linux (wip)
+AUR package: https://aur.archlinux.org/packages/twemoji-color-font/
 
 ```sh
 yaourt -S twemoji-color-font
 ```
 
-### Install on Gentoo Linux
-Gentoo repository: https://github.com/jorgicio/jorgicio-gentoo (wip)
+### Install on Gentoo Linux (wip)
+Gentoo repository: https://github.com/jorgicio/jorgicio-gentoo
 
 ```sh
 # Install layman using Portage with USE="git" enabled, the default.
@@ -134,13 +134,13 @@ emerge twemoji-color-font
 
 ## Install on OS X
 Both SVGinOT versions are available from releases:
-https://github.com/eosrei/twemoji-color-font/releases (wip)
+https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
-1. `TwitterColorEmoji-SVGinOT-1.1.zip` - The regular version of the font
+1. `NotoColorEmoji-SVGinOT-1.0.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
-2. `TwitterColorEmoji-SVGinOT-OSX-1.1.zip` - A hack to replace the `Apple
-   Color Emoji` font by [using the same internal name][10]. Install and accept
+2. `NotoColorEmoji-SVGinOT-OSX-1.0.zip` - A hack to replace the `Apple
+   Color Emoji` font by [using the same internal name][13]. Install and accept
    the warning in Font Book.
 
 A [Homebrew](http://brew.sh) package is available.
@@ -152,7 +152,7 @@ brew tap caskroom/fonts
 brew cask install font-twitter-emoji-color
 ```
 
-[10]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[13]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -180,9 +180,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][11] *(Created for this project!)*
+* [SCFBuild][14] *(Created for this project!)*
 
-[11]: https://github.com/eosrei/scfbuild
+[14]: https://github.com/eosrei/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
@@ -192,10 +192,10 @@ sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
 python-fontforge python-pip imagemagick git make
 sudo npm install -g svgo
 sudo pip install fonttools
-git clone (wip) https://github.com/DeeDeeG/noto-color-emoji-font.git
+git clone https://github.com/DeeDeeG/noto-color-emoji-font.git
 cd noto-color-emoji-font
-git clone (wip) https://github.com/eosrei/scfbuild.git SCFBuild
-# be sure type the number of CPU cores you have after the -j (eg 2, 4, 8 cores; example is for 4-core machines)
+git clone https://github.com/eosrei/scfbuild.git SCFBuild
+# type the number of CPU cores you have after the "-j" in the following command (eg 2, 4, 8 cores; example is for 4-core machines)
 make -j 4
 ```
 
