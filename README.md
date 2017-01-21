@@ -92,7 +92,7 @@ want to try them. Primary issues are the 0x2639 and 0x263a characters.
 [11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
 [12]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
 
-### Manual install on any Linux (wip)
+### Manual install on any Linux
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
@@ -143,7 +143,7 @@ https://github.com/DeeDeeG/noto-color-emoji-font/releases
    Color Emoji` font by [using the same internal name][13]. Install and accept
    the warning in Font Book.
 
-A [Homebrew](http://brew.sh) package is available.
+A [Homebrew](http://brew.sh) package is available. (wip)
 
 ```sh
 # Tap the caskroom/fonts keg, if needed.
@@ -189,13 +189,17 @@ Setup and build on Ubuntu 14.04 LTS:
 sudo add-apt-repository ppa:fontforge/fontforge
 sudo apt-get update
 sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
-python-fontforge python-pip imagemagick git make
+python-fontforge python-pip python-yaml imagemagick git make
 sudo npm install -g svgo
 sudo pip install fonttools
 git clone https://github.com/DeeDeeG/noto-color-emoji-font.git
 cd noto-color-emoji-font
 git clone https://github.com/eosrei/scfbuild.git SCFBuild
-# type the number of CPU cores you have after the "-j" in the following command (eg 2, 4, 8 cores; example is for 4-core machines)
+# Type a number after the "-j" in the following command to control number of threads.
+# The build involves an extremely large number of short tasks (several per glyph). 
+# Due to starting and stoping on each thread, CPU usage can be well below 100%, for strong processors.
+# If your machine is powerful, a higher number of threads per-core will be faster and use more of your CPU power.
+# basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
 make -j 4
 ```
 
