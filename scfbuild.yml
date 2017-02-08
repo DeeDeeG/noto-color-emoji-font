@@ -1,4 +1,4 @@
-# SCFBuild configuration file for Twitter Color Emoji
+# SCFBuild configuration file for Noto Color Emoji
 output_file: build/NotoColorEmoji-SVGinOT.ttf
 verbose: False
 glyph_svg_dir: build/svg-bw

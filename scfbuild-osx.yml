@@ -1,4 +1,4 @@
-# SCFBuild configuration file for Twitter Color Emoji
+# SCFBuild configuration file for Noto Color Emoji
 output_file: build/NotoColorEmoji-SVGinOT-OSX.ttf
 verbose: False
 glyph_svg_dir: build/svg-bw
@@ -31,7 +31,7 @@ table_name:
   description: >
     A SVGinOT color emoji font using the Noto Color Emoji set:
     https://github.com/DeeDeeG/noto-color-emoji-font
-  url_vendor: https://github.com/DeeDeeG
+  url_vendor: https://github.com/DeeDeeG/
   url_designer: https://github.com/googlei18n/noto-emoji
   license: Creative Commons Attribution 4.0 International
   url_license: http://creativecommons.org/licenses/by/4.0/
