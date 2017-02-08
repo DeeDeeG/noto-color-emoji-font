@@ -1,6 +1,7 @@
 # Licenses
 
-* Copyright 2016 DeeDeeG CC-BY-4.0/MIT
+* Copyright 2017 DeeDeeG CC-BY-4.0/MIT
+* Copyright 2016 Brad Erickson CC-BY-4.0/MIT
 * Copyright 2016 Google Inc. Apache 2.0
 * Copyright 2013 Joe Loughry and Terence Eden MIT
 
@@ -10,19 +11,14 @@
 
 Thank you eosrei, Google, open source community. You are the real MVP's.
 
-## Artwork
-* Applies to SVG file and TTF font files
+## Fonts
+* Applies to TTF font files
 * License: Creative Commons Attribution 4.0 International
 * Human Readable License: http://creativecommons.org/licenses/by/4.0/
 * Complete Legal Terms: http://creativecommons.org/licenses/by/4.0/legalcode
 
-## Source Code
-* Applies to everything else
-* License: MIT
-* Complete Legal Terms: http://opensource.org/licenses/MIT
-
 ## Noto Color Emoji License
-
+* Applies to all full-color SVGs. (File names have been changed to work with SCFBuild, but the contents of these files have not been altered.)
 * Source: https://github.com/googlei18n/noto-emoji
 * Art License: Apache license, version 2.0
 
@@ -33,3 +29,8 @@ in `assets/svg-bw`.
 
 * Source: https://github.com/jloughry/Unicode
 * Art License: MIT
+
+## Source Code
+* Applies to everything else
+* License: MIT
+* Complete Legal Terms: http://opensource.org/licenses/MIT
