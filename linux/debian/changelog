@@ -1,3 +1,9 @@
+fonts-noto-color-emoji-svginot (1.0-1) trusty; urgency=medium
+
+  * Initial release of Noto Color Emoji SVG in OpenType.
+
+ -- DeeDeeG <DeeDeeG@users.noreply.github.com>  Tue, 14 Feb 2017 16:31:35 -0700
+
 fonts-twemoji-svginot (1.1-1) trusty; urgency=medium
 
   * Upgrade to twemoji v2.1.0 adding 72 Unicode 9.0 emoji.

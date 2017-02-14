@@ -201,10 +201,17 @@ git clone https://github.com/eosrei/scfbuild.git SCFBuild
 # basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
 make -j 4
 # If you want to build all the packages (totally optional), run:
+sudo apt-get install devscripts
+# Which allows you to build the DEB_PACKAGE target, and:
 make package -j 4
-# It's good to run this first if you want the packages, or else you will 
-# find your computer is re-building the ttf font files in order to 
-# satisfy the dependencies of the "package" build targets.
+# 
+# "make package" will run without devscripts installed, and it will
+# make the Linux and MacOS packages, but it won't build the .deb package.
+# 
+# It's good to run "make package" before running a simple "make," if
+# you want the packages, or else you will find your computer
+# re-building the ttf font files in order to satisfy the dependencies
+# of the "package" build target.
 ```
 
 ## License

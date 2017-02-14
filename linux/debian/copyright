@@ -1,9 +1,10 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: twemoji-color-font
-Upstream-Contact: Brad Erickson <eosrei@gmail.com>
+Upstream-Name: noto-color-emoji-font
+Upstream-Contact: DeeDeeG <DeeDeeG@users.noreply.github.com>
 
 Files: *
 Copyright: 2016 Brad Erickson <eosrei@gmail.com>
+Copyright: 2017 DeeDeeG <DeeDeeG@users.noreply.github.com>
 License: MIT
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
@@ -23,8 +24,8 @@ License: MIT
   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
   OR OTHER DEALINGS IN THE SOFTWARE.
 
-Files: TwitterColorEmoji-SVGinOT.ttf
-Copyright: 2016 Brad Erickson
-  2016 Twitter, Inc. <https://github.com/twitter/twemoji>
+Files: NotoColorEmoji-SVGinOT.ttf
+Copyright: 2017 DeeDeeG
+  2016 Google Inc. <https://github.com/googlei18n/noto-emoji>
 License: CC-BY-4.0
   https://creativecommons.org/licenses/by/4.0/legalcode
