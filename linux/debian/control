@@ -1,12 +1,12 @@
-Source: fonts-twemoji-svginot
+Source: fonts-noto-color-emoji-svginot
 Section: fonts
 Priority: extra
 Standards-Version: 3.9.5
-Maintainer: Brad Erickson <eosrei@gmail.com>
+Maintainer: DeeDeeG <dandromb@gmail.com>
 Build-Depends: debhelper (>= 9)
-Homepage: https://github.com/eosrei/twemoji-color-font
+Homepage: https://github.com/DeeDeeG/noto-color-emoji-font
 
-Package: fonts-twemoji-svginot
+Package: fonts-noto-color-emoji-svginot
 Architecture: all
 Multi-Arch: foreign
 Depends:
@@ -15,10 +15,9 @@ Depends:
   ttf-bitstream-vera
 Enhances:
   firefox
-Description: Twitter Emoji color emoji SVGinOT font
- A color emoji SVGinOT font using Twitter for Everyone graphics with diversity
- and country flags.
+Description: Noto Color Emoji SVGinOT Font
+ A color emoji SVGinOT font using Noto Color Emoji graphics from Lollipop, minus most regional flags.
  .
  Currently only Mozilla Firefox and Thunderbird support SVGinOT fonts.
  .
- Should not be installed at the same time as: fonts-emojione-svginot
+ Should not be installed at the same time as: fonts-emojione-svginot, or fonts-twemoji-svginot
