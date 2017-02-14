@@ -37,7 +37,7 @@ SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_ST
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package deb-package osx-package
+package: regular-package linux-package osx-package deb-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -58,13 +58,6 @@ linux-package: $(REGULAR_FONT)
 	cp -R linux/* build/$(LINUX_PACKAGE)
 	tar zcvf build/$(LINUX_PACKAGE).tar.gz -C build $(LINUX_PACKAGE)
 
-deb-package: linux-package
-	rm -rf build/$(DEB_PACKAGE)-$(VERSION)
-	cp build/$(LINUX_PACKAGE).tar.gz build/$(DEB_PACKAGE)_$(VERSION).orig.tar.gz
-	cp -R build/$(LINUX_PACKAGE) build/$(DEB_PACKAGE)-$(VERSION)
-	cd build/$(DEB_PACKAGE)-$(VERSION); debuild -us -uc
-	#debuild -S
-
 osx-package: $(OSX_FONT)
 	rm -f $(OSX_PACKAGE).zip
 	rm -rf $(OSX_PACKAGE)
@@ -73,6 +66,13 @@ osx-package: $(OSX_FONT)
 	cp LICENSE* $(OSX_PACKAGE)
 	cp README.md $(OSX_PACKAGE)
 	7z a -tzip -mx=9 $(OSX_PACKAGE).zip ./$(OSX_PACKAGE)
+
+deb-package: linux-package
+	rm -rf build/$(DEB_PACKAGE)-$(VERSION)
+	cp build/$(LINUX_PACKAGE).tar.gz build/$(DEB_PACKAGE)_$(VERSION).orig.tar.gz
+	cp -R build/$(LINUX_PACKAGE) build/$(DEB_PACKAGE)-$(VERSION)
+	cd build/$(DEB_PACKAGE)-$(VERSION); debuild -us -uc
+	#debuild -S
 
 # Build both versions of the fonts
 $(REGULAR_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
