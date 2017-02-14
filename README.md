@@ -1,28 +1,31 @@
 # Noto Color Emoji SVGinOT Font
 
-Major credit to eosrei. This is a lightly modified version  of his [Twitter Emoji for Everyone][1] repo.
+Major credit to eosrei (and various other contributors). This is a lightly modified version of his [`twemoji-color-font`][1] repo.
 
-This older release of Noto Color Emoji is the most recent release Google has provided in SVG format. SVGs were required in order to use eosrei's  tools. (On the bright side, some people were sad to see gender-neutral emojis removed from Google's Noto Emoji font recently. This older release includes them! Glorious and blobby.)
+(Legal note: he has not commented on this project, to my knowledge, and my crediting him does not imply his endorsement. /legalese)
+
+This older release of Noto Color Emoji is the most recent release Google has provided in SVG format. SVGs were required in order to use eosrei's tools. (On the bright side, some people were sad to see gender-neutral emojis removed from Google's Noto Emoji font recently. This older release includes them! Glorious and blobby.)
 
 ## Intro
 
-This is a somewhat retro-feeling color and B&W emoji SVGinOT font, built from an outdated version of the
-[Noto Color Emoji][2] artwork with support for limited [ZWJ][3] sequences (many unicode 9.0 and other recent glyphs are missing at the moment),
-[skin tone diversity][4] (maybe, someday?) and [country flags][5] (not all flags supported).
+This is a somewhat retro-feeling color and B&W emoji SVGinOT font, built from an older version of the [Noto Color Emoji][2] artwork with support for limited [ZWJ][3] sequences (all unicode 7.0 and other recent glyphs are missing at the moment), [skin tone diversity][4] (maybe, someday?) and [country flags][5] (not all flags supported).
+
+This is essentially a recreation of the font from [Lollipop][6], minus most of the regional flags.
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
 is not a limitation of the font, but of the operating systems and applications.
 Regular B&W outline emoji are included for backwards/fallback compatibility.
 
-[Do you prefer EmojiOne graphics?][6]
+[Do you prefer EmojiOne graphics?][7] (repo by eosrei and various contributors)
 
 [1]: https://github.com/eosrei/twemoji-color-font
 [2]: https://github.com/googlei18n/noto-emoji
 [3]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
 [4]: http://www.unicode.org/reports/tr51/#Diversity
 [5]: http://www.unicode.org/reports/tr51/#Flags
-[6]: https://github.com/eosrei/emojione-color-font
+[6]: https://emojipedia.org/google/android-5.0/
+[7]: https://github.com/eosrei/emojione-color-font
 
 ## Table of Contents
 
@@ -39,13 +42,11 @@ Regular B&W outline emoji are included for backwards/fallback compatibility.
 Demo in Firefox on Linux.
 ![Firefox color emoji in Linux](images/notocoloremoji-font-demo.png?raw=true)
 
-Demo image coming soon?
-
 ## What is SVGinOT?
 *SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
 and Open Font Format fonts. It allows font creators to embed complete SVG files
 within a font enabling full color and even animations. There are more details
-in the [SVGinOT proposal][7] and the [OpenType SVG table specifications][8].
+in the [SVGinOT proposal][8] and the [OpenType SVG table specifications][9].
 
 SVGinOT Font demos (Firefox only):
 
@@ -53,8 +54,8 @@ SVGinOT Font demos (Firefox only):
 * http://xerographer.github.io/reinebow/
 * http://xerographer.github.io/multicoloure/
 
-[7]: https://www.w3.org/2013/10/SVG_in_OpenType/
-[8]: https://www.microsoft.com/typography/otspec/svg.htm
+[8]: https://www.w3.org/2013/10/SVG_in_OpenType/
+[9]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Install on Linux
 The font can be installed for a user or system-wide. Get the latest version
@@ -66,31 +67,29 @@ systems default serif, sans-serif and monospace fonts.*
 ### Why Bitstream Vera
 The default serif, sans-serif and monospace font for most Linux distributions is
 `DejaVu`. `DejaVu` includes a wide range of symbols which override the
-`EmojiOne Color` characters. The previous solution was to make
-`EmojiOne Color` the default system font, but that causes a number of issues.
+color emoji characters. The previous solution was to make `EmojiOne Color` the default system font, but that causes a number of issues.
 A better solution is a different font that doesn't override any emoji characters
 such as `Bitstream Vera`. `Bitstream Vera` is the source of the glyphs used in
 `DejaVu`, so it's not very different. 99%+ of people will not notice the
 difference.
 
 ### Additional default font options
-The `Noto` and `Roboto` font families conflict far less than `DejaVu`. You may
-want to try them. Primary issues are the 0x2639 and 0x263a characters.
+The `Noto Sans`/`Noto Serif` and `Roboto` font families conflict far less than `DejaVu`. You may want to try them. Primary issues are the 0x2639 and 0x263a characters.
 
 ### Known issues
 
-* [Symbols/emoji in monospace formatted text cause incorrect character alignment][9].
+* [Symbols/emoji in monospace formatted text cause incorrect character alignment][10].
   The whitespace character widths from the most recently selected
   fallback font are used in Pango/GTK applications.
-* [[Issue #31][10]] [Some font families are not matched correctly in Linux Firefox][11].
+* [[Issue #31][11]] [Some font families are not matched correctly in Linux Firefox][12].
   Workaround: Open `about:config` set
   `gfx.font_rendering.fontconfig.fontlist.enabled` to `false`.
-  [Note: May cause crashes in Firefox <48.][12]
+  [Note: May cause crashes in Firefox <48.][13]
 
-[9]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
-[10]:https://github.com/eosrei/emojione-color-font/issues/31
-[11]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
-[12]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
+[10]:https://bugzilla.gnome.org/show_bug.cgi?id=757785
+[11]:https://github.com/eosrei/emojione-color-font/issues/31
+[12]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
+[13]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
 
 ### Manual install on any Linux
 Install for the current user without root:
@@ -140,7 +139,7 @@ https://github.com/DeeDeeG/noto-color-emoji-font/releases
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
 2. `NotoColorEmoji-SVGinOT-OSX-1.0.zip` - A hack to replace the `Apple
-   Color Emoji` font by [using the same internal name][13]. Install and accept
+   Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 
 A [Homebrew](http://brew.sh) package is available. (wip)
@@ -152,7 +151,7 @@ brew tap caskroom/fonts
 brew cask install font-twitter-emoji-color
 ```
 
-[13]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
+[14]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
 
 *Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
@@ -180,9 +179,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][14] *(Created for this project!)*
+* [SCFBuild][15] *(Created by eosrei for [EmojiOne Color][6]!)*
 
-[14]: https://github.com/eosrei/scfbuild
+[15]: https://github.com/eosrei/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
@@ -201,9 +200,16 @@ git clone https://github.com/eosrei/scfbuild.git SCFBuild
 # If your machine is powerful, a higher number of threads per-core will be faster and use more of your CPU power.
 # basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
 make -j 4
+# If you want to build all the packages (totally optional), run:
+make package -j 4
+# It's good to run this first if you want the packages, or else you will 
+# find your computer is re-building the ttf font files in order to 
+# satisfy the dependencies of the "package" build targets.
 ```
 
 ## License
 
-The artwork and TTF fonts are licensed CC-BY-4.0. Please see
-[LICENSE.md](LICENSE.md) for details.
+The TTF fonts are licensed CC-BY-4.0. 
+The SVG artwork is licensed Apache 2.0. 
+Please see [LICENSE.md](LICENSE.md) for details.
+
