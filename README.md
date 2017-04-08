@@ -210,7 +210,7 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][15] *(Created by eosrei for [EmojiOne Color][6]!)*
+* [SCFBuild][15] *(Created by eosrei for [EmojiOne Color][7]!)*
 
 [15]: https://github.com/eosrei/scfbuild
 
