@@ -13,9 +13,10 @@ This is a somewhat retro-feeling color and B&W emoji SVGinOT font, built from an
 This is essentially a recreation of the font from [Lollipop][6], minus most of the regional flags.
 
 The font works in all operating systems, but will *currently* only show color
-emoji in Firefox, Thunderbird and other Mozilla Gecko-based applications. This
-is not a limitation of the font, but of the operating systems and applications.
-Regular B&W outline emoji are included for backwards/fallback compatibility.
+emoji in Firefox, Thunderbird, Photoshop CC 2017, and Windows Edge V38.14393+.
+This is not a limitation of the font, but of the operating systems and
+applications. Regular B&W outline emoji are included for backwards/fallback
+compatibility.
 
 [Do you prefer EmojiOne graphics?][7] (repo by eosrei and various contributors)
 
@@ -153,7 +154,7 @@ brew cask install font-twitter-emoji-color
 
 [14]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
 
-*Reiterating: Only FireFox supports the SVGinOT color emoji for now. Safari and
+*Reiterating: Only FireFox supports SVGinOT color emoji for now. Safari and
 Chrome will use the fallback black and white emoji.*
 
 ## Install on Windows
@@ -190,8 +191,8 @@ https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.1-noto/Not
 
 [16]:https://www.python.org/downloads/windows/
 
-*Reiterating: Only FireFox supports the SVGinOT color emoji for now. IE and
-Chrome will use the fallback black and white emoji.*
+*Reiterating: Only FireFox and Edge support SVGinOT color emoji for now. Chrome will use the
+fallback black and white emoji.*
 
 ## Building
 Overview:
