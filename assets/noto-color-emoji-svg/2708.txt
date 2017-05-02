@@ -1,0 +1,13 @@
+emoji_u1f468_1f3fb_200d_2708.svg
+emoji_u1f468_1f3fc_200d_2708.svg
+emoji_u1f468_1f3fd_200d_2708.svg
+emoji_u1f468_1f3fe_200d_2708.svg
+emoji_u1f468_1f3ff_200d_2708.svg
+emoji_u1f468_200d_2708.svg
+emoji_u1f469_1f3fb_200d_2708.svg
+emoji_u1f469_1f3fc_200d_2708.svg
+emoji_u1f469_1f3fd_200d_2708.svg
+emoji_u1f469_1f3fe_200d_2708.svg
+emoji_u1f469_1f3ff_200d_2708.svg
+emoji_u1f469_200d_2708.svg
+emoji_u2708.svg
