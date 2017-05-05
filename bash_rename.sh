@@ -14,7 +14,7 @@
 # Or it will actually mess up their names.) 😕
 
 # This file may break if Google decides
-# to rename their SVGs. Oh well.
+# to rename their SVGs. Oh well. 🤷
 
 
 
@@ -32,7 +32,7 @@
 
 
 # There are lots of comments in this file, 💬
-# and you're encouraged to read them 
+# and you're encouraged to read them
 # if you'd like to modify it.
 
 
