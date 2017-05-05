@@ -18,7 +18,7 @@ Thank you eosrei, Google, open source community. You are the real MVP's.
 * Complete Legal Terms: http://creativecommons.org/licenses/by/4.0/legalcode
 
 ## Noto Color Emoji License
-* Applies to all full-color SVGs. (File names have been changed to work with SCFBuild, but the contents of these files have not been altered.)
+* Applies to all full-color SVGs. (Most filenames have been changed to work with SCFBuild, and some SVGs have been tweaked to better match the official version of the Noto Color Emoji font as released with Android Nougat, but otherwise the contents of these files have not been altered.)
 * Source: https://github.com/googlei18n/noto-emoji
 * Art License: Apache license, version 2.0
 
