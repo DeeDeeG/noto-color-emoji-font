@@ -31,7 +31,7 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
+     inkscape:window-width="721"
      inkscape:window-height="480"
      id="namedview124"
      showgrid="false"
@@ -69,7 +69,7 @@
              style="overflow:visible;"
              id="use87" /></clipPath></g></g><polygon
        id="XMLID_1363_"
-       style="opacity:0.54;"
+       style="opacity:0.54;fill:#010101;fill-opacity:1"
        points="92.8,106.95 95.23,109.71 97.09,96.12 94.67,93.36  " /></g><ellipse
      id="XMLID_1365_"
      transform="matrix(0.9952 -0.0983 0.0983 0.9952 -5.0641 6.3905)"
@@ -120,5 +120,5 @@
            style="overflow:visible;"
            id="use117" /></clipPath></g></g><polygon
      id="XMLID_1373_"
-     style="opacity:0.54;"
+     style="opacity:0.54;fill:#010101;fill-opacity:1"
      points="35.2,106.95 32.77,109.71 30.91,96.12 33.33,93.36 " /></svg>
