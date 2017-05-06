@@ -18,7 +18,7 @@
    style="enable-background:new 0 0 128 128;"
    xml:space="preserve"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="1f937-1f3fd-200d-2640-fe0f.svg"><metadata
+   sodipodi:docname="1f937-1f3fd.svg"><metadata
      id="metadata304"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
@@ -36,8 +36,8 @@
      id="namedview300"
      showgrid="false"
      inkscape:zoom="4"
-     inkscape:cx="64"
-     inkscape:cy="21.372881"
+     inkscape:cx="26.875"
+     inkscape:cy="20.872881"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -69,7 +69,7 @@
              style="overflow:visible;"
              id="use267" /></clipPath></g></g><polygon
        id="XMLID_1363_"
-       style="opacity:0.54;"
+       style="opacity:0.54;fill:#010101;fill-opacity:1"
        points="92.8,106.95 95.23,109.71 97.09,96.12 94.67,93.36  " /></g><ellipse
      id="XMLID_1365_"
      transform="matrix(0.9952 -0.0983 0.0983 0.9952 -5.0641 6.3905)"
@@ -120,5 +120,5 @@
            style="overflow:visible;"
            id="use297" /></clipPath></g></g><polygon
      id="XMLID_1373_"
-     style="opacity:0.54;"
+     style="opacity:0.54;fill:#010101;fill-opacity:1"
      points="35.2,106.95 32.77,109.71 30.91,96.12 33.33,93.36 " /></svg>
