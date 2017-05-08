@@ -6,7 +6,7 @@ Major credit to eosrei (and various other contributors). This is a lightly modif
 
 Some SVGs are still missing, while an [issue][17] exporting them from Adobe Illustrator is resolved.
 
-[17]: 
+[17]: https://github.com/googlei18n/noto-emoji/issues/119
 
 ## Intro
 
@@ -27,7 +27,7 @@ compatibility.
 [3]: http://unicode.org/emoji/charts/emoji-zwj-sequences.html
 [4]: http://www.unicode.org/reports/tr51/#Diversity
 [5]: http://www.unicode.org/reports/tr51/#Flags
-[6]: https://emojipedia.org/google/android-7.0/
+[6]: http://emojipedia.org/google/android-7.1/
 [7]: https://github.com/eosrei/emojione-color-font
 
 ## Table of Contents
