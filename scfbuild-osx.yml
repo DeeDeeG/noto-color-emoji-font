@@ -1,6 +1,6 @@
 # SCFBuild configuration file for Noto Color Emoji
 output_file: build/NotoColorEmoji-SVGinOT-OSX.ttf
-verbose: False
+verbose: True
 glyph_svg_dir: build/svg-bw
 color_svg_dir: build/svg-color
 # Translate the SVGs on import into glyphs.
