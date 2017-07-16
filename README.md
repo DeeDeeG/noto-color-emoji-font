@@ -4,15 +4,11 @@ Major credit to eosrei (and various other contributors). This is a lightly modif
 
 (Legal note: he has not commented on this project, to my knowledge, and my crediting him does not imply his endorsement. /legalese)
 
-Some SVGs are still missing, while an [issue][17] exporting them from Adobe Illustrator is resolved.
-
-[17]: https://github.com/googlei18n/noto-emoji/issues/119
-
 ## Intro
 
-This is a color and B&W emoji SVGinOT font, built from the latest version of the [Noto Color Emoji][2] artwork with support for most [ZWJ][3] sequences, [skin tone diversity][4] and [country flags][5] (not all flags supported). Also comes with the recent gendered professions emoji, such as judge, airplane pilot.
+This is a color and B&W emoji SVGinOT font, built from the latest version of the [Noto Color Emoji][2] artwork with support for most [ZWJ][3] sequences, [skin tone diversity][4] and [country flags][5] (not all flags supported). Also comes with the recent gendered professions emoji, such as judge, airplane pilot, and cook.
 
-This is essentially a recreation of the font from [Nougat][6], minus most of the regional flags. It's also missing a few emoji, as noted [above][17].
+This is essentially a recreation of the font from [Nougat][6], minus most of the flags.
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Firefox, Thunderbird, Photoshop CC 2017, and Windows Edge V38.14393+.
@@ -94,54 +90,33 @@ The `Noto Sans`/`Noto Serif` and `Roboto` font families conflict far less than `
 [12]:https://bugzilla.mozilla.org/show_bug.cgi?id=1245811
 [13]:https://bugzilla.mozilla.org/show_bug.cgi?id=1266341
 
+## Install on Linux
+
+### Standard install
+
+Open the font in a font viewer program and press install. Websites and applications that specifically call for Noto Color Emoji will use the font. Certain issues with Fontconfig may prevent the emoji from showing up by default. For a more thorough installation, use the install script described below.
+
 ### Manual install on any Linux
+
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto-pre/NotoColorEmoji-SVGinOT-Linux-1.2-pre.tar.gz
+wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 2. Uncompress the file
-tar zxf NotoColorEmoji-SVGinOT-Linux-1.2-pre.tar.gz
+tar zxf NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 3. Run the installer
-cd NotoColorEmoji-SVGinOT-Linux-1.2-pre
+cd NotoColorEmoji-SVGinOT-Linux-1.2
 ./install.sh
-```
-
-### Install on Ubuntu Linux (wip)
-Launchpad PPA: https://launchpad.net/~eosrei/+archive/ubuntu/fonts
-
-```sh
-sudo apt-add-repository ppa:eosrei/fonts
-sudo apt-get update
-sudo apt-get install fonts-twemoji-svginot
-```
-
-### Install on Arch Linux (wip)
-AUR package: https://aur.archlinux.org/packages/twemoji-color-font/
-
-```sh
-yaourt -S twemoji-color-font
-```
-
-### Install on Gentoo Linux (wip)
-Gentoo repository: https://github.com/jorgicio/jorgicio-gentoo
-
-```sh
-# Install layman using Portage with USE="git" enabled, the default.
-emerge layman
-# Add the repo.
-layman -s jorgicio
-# Install the package.
-emerge twemoji-color-font
 ```
 
 ## Install on OS X
 Both SVGinOT versions are available from releases:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
-1. `NotoColorEmoji-SVGinOT-1.2-pre.zip` - The regular version of the font
+1. `NotoColorEmoji-SVGinOT-1.2.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
-2. `NotoColorEmoji-SVGinOT-OSX-1.2-pre.zip` - A hack to replace the `Apple
+2. `NotoColorEmoji-SVGinOT-OSX-1.2.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 
@@ -169,7 +144,7 @@ from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
 font for emoji characters. Download:
-https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto-pre/NotoColorEmoji-SVGinOT-1.2-pre.zip
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-1.2.zip
 
 ### Replace the default Windows emoji fonts
 
@@ -184,7 +159,7 @@ install script requires both [Python][16] and pip in the PATH.
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.6 to PATH" and finish the install process.
 3. Download Noto Color Emoji Windows package from releases:
-https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto-pre/NotoColorEmoji-SVGinOT-Win-1.2-pre.zip
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-Win-1.2.zip
 4. Uncompress the file.
 5. Open the new NotoColorEmoji directory.
 7. Run install.cmd. *Note: This will take some time.*
