@@ -101,7 +101,7 @@ Open the font in a font viewer program and press install. Websites and applicati
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
+wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 2. Uncompress the file
 tar zxf NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 3. Run the installer
@@ -144,7 +144,7 @@ from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
 font for emoji characters. Download:
-https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-1.2.zip
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-1.2.zip
 
 ### Replace the default Windows emoji fonts
 
@@ -159,7 +159,7 @@ install script requires both [Python][16] and pip in the PATH.
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
 2. Start the installer, select "Add Python 3.6 to PATH" and finish the install process.
 3. Download Noto Color Emoji Windows package from releases:
-https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-noto/NotoColorEmoji-SVGinOT-Win-1.2.zip
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-Win-1.2.zip
 4. Uncompress the file.
 5. Open the new NotoColorEmoji directory.
 7. Run install.cmd. *Note: This will take some time.*
