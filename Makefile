@@ -17,7 +17,6 @@ OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
 FIREFOX_FONT := build/$(FONT_PREFIX)-pretends-to-be-EmojiOne-Mozilla-for-Firefox.ttf
 FIREFOX_PACKAGE := build/$(FONT_PREFIX)-Firefox-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
-DEB_PACKAGE := fonts-noto-color-emoji-svginot
 WINDOWS_TOOLS := windows
 WINDOWS_PACKAGE := build/$(FONT_PREFIX)-Win-$(VERSION)
 
@@ -41,7 +40,7 @@ SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_ST
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package osx-package firefox-package windows-package deb-package
+package: regular-package linux-package osx-package firefox-package windows-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -89,13 +88,6 @@ windows-package: $(REGULAR_FONT)
 	cp README.md $(WINDOWS_PACKAGE)
 	cp $(WINDOWS_TOOLS)/* $(WINDOWS_PACKAGE)
 	7z a -tzip -mx=9 $(WINDOWS_PACKAGE).zip ./$(WINDOWS_PACKAGE)
-
-deb-package: linux-package
-	rm -rf build/$(DEB_PACKAGE)-$(VERSION)
-	cp build/$(LINUX_PACKAGE).tar.gz build/$(DEB_PACKAGE)_$(VERSION).orig.tar.gz
-	cp -R build/$(LINUX_PACKAGE) build/$(DEB_PACKAGE)-$(VERSION)
-	cd build/$(DEB_PACKAGE)-$(VERSION); debuild -us -uc
-	#debuild -S
 
 # Build all three versions of the fonts
 $(REGULAR_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
