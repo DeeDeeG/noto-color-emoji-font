@@ -17,10 +17,10 @@
    xml:space="preserve"
    id="svg46"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="1f482-1f3fd-200d-2642-fe0f.svg"><metadata
+   sodipodi:docname="1f482-1f3fd.svg"><metadata
      id="metadata101"><rdf:RDF><cc:Work
          rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title /></cc:Work></rdf:RDF></metadata><defs
      id="defs99" /><sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -30,7 +30,7 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
+     inkscape:window-width="771"
      inkscape:window-height="480"
      id="namedview97"
      showgrid="false"
@@ -143,12 +143,12 @@
          id="XMLID_2_"
          x="90.18"
          y="121.43"
-         style="opacity:0.54;"
+         style="opacity:0.54;fill:#010101;fill-opacity:1"
          width="2.33"
          height="6.57" /><rect
          id="XMLID_4_"
          x="35.49"
          y="121.43"
-         style="opacity:0.54;"
+         style="opacity:0.54;fill:#010101;fill-opacity:1"
          width="2.33"
          height="6.57" /></g></g></svg>
