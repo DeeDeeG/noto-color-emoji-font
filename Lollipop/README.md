@@ -33,7 +33,7 @@ compatibility.
 * [Examples](#examples)
 * [What is SVGinOT?](#what-is-svginot)
 * [Install on Linux](#install-on-linux)
-* [Install on OS X](#install-on-os-x)
+* [Install on macOS](#install-on-macos)
 * [Install on Windows](#install-on-windows)
 * [Building](#building)
 * [License](#license)
@@ -58,7 +58,7 @@ SVGinOT Font demos (Firefox only):
 [8]: https://www.w3.org/2013/10/SVG_in_OpenType/
 [9]: https://www.microsoft.com/typography/otspec/svg.htm
 
-## Install on Linux
+## Linux Details
 The font can be installed for a user or system-wide. Get the latest version
 from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
@@ -132,25 +132,16 @@ layman -s jorgicio
 emerge twemoji-color-font
 ```
 
-## Install on OS X
+## Install on macOS
 Both SVGinOT versions are available from releases:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
 1. `NotoColorEmoji-SVGinOT-1.1.zip` - The regular version of the font
-   installs like any other font and can be specifically selected, but OS X will
+   installs like any other font and can be specifically selected, but macOS will
    default to the `Apple Color Emoji` font for emojis.
 2. `NotoColorEmoji-SVGinOT-OSX-1.1.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
-
-A [Homebrew](http://brew.sh) package is available. (wip)
-
-```sh
-# Tap the caskroom/fonts keg, if needed.
-brew tap caskroom/fonts
-# Install the font using brew
-brew cask install font-twitter-emoji-color
-```
 
 [14]:http://www.macissues.com/2014/11/21/how-to-change-the-default-system-font-in-mac-os-x/
 
@@ -237,7 +228,7 @@ sudo apt-get install devscripts
 make package -j 4
 #
 # "make package" will run without devscripts installed, and it will
-# make the Linux, MacOS and Windows packages, but it won't build the
+# make the Linux, macOS and Windows packages, but it won't build the
 # .deb package.
 #
 # It's good to run "make package" before running a simple "make," if
