@@ -8,12 +8,12 @@ TMP := /dev/shm
 # Where to find scfbuild?
 SCFBUILD := SCFBuild/bin/scfbuild
 
-VERSION := 1.2
+VERSION := 1.3
 FONT_PREFIX := NotoColorEmoji-SVGinOT
 REGULAR_FONT := build/$(FONT_PREFIX).ttf
 REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
-OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
-OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
+MACOS_FONT := build/$(FONT_PREFIX)-macOS.ttf
+MACOS_PACKAGE := build/$(FONT_PREFIX)-macOS-$(VERSION)
 FIREFOX_FONT := build/$(FONT_PREFIX)-pretends-to-be-EmojiOne-Mozilla-for-Firefox.ttf
 FIREFOX_PACKAGE := build/$(FONT_PREFIX)-Firefox-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
@@ -35,12 +35,12 @@ SVG_STAGE_FILES := $(patsubst $(SVG_EXTRA)/%.svg, build/stage/%.svg, $(SVG_STAGE
 SVG_BW_FILES := $(patsubst build/stage/%.svg, build/svg-bw/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-.PHONY: all package regular-package linux-package osx-package firefox-package windows-package copy-extra clean
+.PHONY: all package regular-package linux-package macos-package firefox-package windows-package copy-extra clean
 
-all: $(REGULAR_FONT) $(OSX_FONT)
+all: $(REGULAR_FONT) $(MACOS_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package osx-package firefox-package windows-package
+package: regular-package linux-package macos-package firefox-package windows-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -61,14 +61,14 @@ linux-package: $(REGULAR_FONT)
 	cp -R linux/* build/$(LINUX_PACKAGE)
 	tar zcvf build/$(LINUX_PACKAGE).tar.gz -C build $(LINUX_PACKAGE)
 
-osx-package: $(OSX_FONT)
-	rm -f $(OSX_PACKAGE).zip
-	rm -rf $(OSX_PACKAGE)
-	mkdir $(OSX_PACKAGE)
-	cp $(OSX_FONT) $(OSX_PACKAGE)
-	cp LICENSE* $(OSX_PACKAGE)
-	cp README.md $(OSX_PACKAGE)
-	7z a -tzip -mx=9 $(OSX_PACKAGE).zip ./$(OSX_PACKAGE)
+macos-package: $(MACOS_FONT)
+	rm -f $(MACOS_PACKAGE).zip
+	rm -rf $(MACOS_PACKAGE)
+	mkdir $(MACOS_PACKAGE)
+	cp $(MACOS_FONT) $(MACOS_PACKAGE)
+	cp LICENSE* $(MACOS_PACKAGE)
+	cp README.md $(MACOS_PACKAGE)
+	7z a -tzip -mx=9 $(MACOS_PACKAGE).zip ./$(MACOS_PACKAGE)
 
 firefox-package: $(FIREFOX_FONT)
 	rm -f $(FIREFOX_PACKAGE).zip
@@ -93,8 +93,8 @@ windows-package: $(REGULAR_FONT)
 $(REGULAR_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
 	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"
 
-$(OSX_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
-	$(SCFBUILD) -c scfbuild-osx.yml -o $(OSX_FONT) --font-version="$(VERSION)"
+$(MACOS_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
+	$(SCFBUILD) -c scfbuild-macos.yml -o $(MACOS_FONT) --font-version="$(VERSION)"
 
 $(FIREFOX_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
 	$(SCFBUILD) -c scfbuild-firefox.yml -o $(FIREFOX_FONT) --font-version="$(VERSION)"
