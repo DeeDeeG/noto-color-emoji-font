@@ -14,6 +14,8 @@ REGULAR_FONT := build/$(FONT_PREFIX).ttf
 REGULAR_PACKAGE := build/$(FONT_PREFIX)-$(VERSION)
 OSX_FONT := build/$(FONT_PREFIX)-OSX.ttf
 OSX_PACKAGE := build/$(FONT_PREFIX)-OSX-$(VERSION)
+FIREFOX_FONT := build/$(FONT_PREFIX)-pretends-to-be-EmojiOne-Mozilla-for-Firefox.ttf
+FIREFOX_PACKAGE := build/$(FONT_PREFIX)-Firefox-$(VERSION)
 LINUX_PACKAGE := $(FONT_PREFIX)-Linux-$(VERSION)
 DEB_PACKAGE := fonts-noto-color-emoji-svginot
 WINDOWS_TOOLS := windows
@@ -34,12 +36,12 @@ SVG_STAGE_FILES := $(patsubst $(SVG_EXTRA)/%.svg, build/stage/%.svg, $(SVG_STAGE
 SVG_BW_FILES := $(patsubst build/stage/%.svg, build/svg-bw/%.svg, $(SVG_STAGE_FILES))
 SVG_COLOR_FILES := $(patsubst build/stage/%.svg, build/svg-color/%.svg, $(SVG_STAGE_FILES))
 
-.PHONY: all package regular-package linux-package osx-package windows-package copy-extra clean
+.PHONY: all package regular-package linux-package osx-package firefox-package windows-package copy-extra clean
 
 all: $(REGULAR_FONT) $(OSX_FONT)
 
 # Create the operating system specific packages
-package: regular-package linux-package osx-package windows-package deb-package
+package: regular-package linux-package osx-package firefox-package windows-package deb-package
 
 regular-package: $(REGULAR_FONT)
 	rm -f $(REGULAR_PACKAGE).zip
@@ -69,6 +71,15 @@ osx-package: $(OSX_FONT)
 	cp README.md $(OSX_PACKAGE)
 	7z a -tzip -mx=9 $(OSX_PACKAGE).zip ./$(OSX_PACKAGE)
 
+firefox-package: $(FIREFOX_FONT)
+	rm -f $(FIREFOX_PACKAGE).zip
+	rm -rf $(FIREFOX_PACKAGE)
+	mkdir $(FIREFOX_PACKAGE)
+	cp $(FIREFOX_FONT) $(FIREFOX_PACKAGE)
+	cp LICENSE* $(FIREFOX_PACKAGE)
+	cp README.md $(FIREFOX_PACKAGE)
+	7z a -tzip -mx=9 $(FIREFOX_PACKAGE).zip ./$(FIREFOX_PACKAGE)
+
 windows-package: $(REGULAR_FONT)
 	rm -f $(WINDOWS_PACKAGE).zip
 	rm -rf $(WINDOWS_PACKAGE)
@@ -86,12 +97,15 @@ deb-package: linux-package
 	cd build/$(DEB_PACKAGE)-$(VERSION); debuild -us -uc
 	#debuild -S
 
-# Build both versions of the fonts
+# Build all three versions of the fonts
 $(REGULAR_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
 	$(SCFBUILD) -c scfbuild.yml -o $(REGULAR_FONT) --font-version="$(VERSION)"
 
 $(OSX_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
 	$(SCFBUILD) -c scfbuild-osx.yml -o $(OSX_FONT) --font-version="$(VERSION)"
+
+$(FIREFOX_FONT): $(SVG_BW_FILES) $(SVG_COLOR_FILES) copy-extra
+	$(SCFBUILD) -c scfbuild-firefox.yml -o $(FIREFOX_FONT) --font-version="$(VERSION)"
 
 copy-extra: build/svg-bw
 	cp $(SVG_EXTRA_BW)/* build/svg-bw/
