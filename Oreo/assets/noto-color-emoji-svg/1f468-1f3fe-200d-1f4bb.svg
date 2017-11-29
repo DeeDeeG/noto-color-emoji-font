@@ -79,14 +79,27 @@
         <path d="M64.02,4.03L64.02,4.03c-0.01,0-0.01,0-0.02,0s-0.01,0-0.02,0v0 C18.55,4.27,27.85,56.17,27.85,56.17s5,8.81,5.1,8.81c0,0,0,0,0,0c-0.03-1.48,0.07-3.2,0.26-5.03 c-0.12-0.29-2.46-4.75-2.48-4.79c-0.24-1.6-0.93-6.98-0.55-13.56c0.41-7.04,2.17-16.96,8.22-24.22 c5.67-6.8,14.27-10.28,25.56-10.35c0.01,0,0.03,0,0.04,0h0v0c11.32,0.06,19.93,3.54,25.6,10.35 c10.81,12.96,8.18,34.33,7.67,37.79c-0.02,0.04-2.46,4.58-2.49,4.65c0.2,1.89,0.31,3.65,0.27,5.17c0,0,0,0,0,0 c0.09,0,5.1-8.81,5.1-8.81S109.45,4.27,64.02,4.03z" style="fill:#291D15;"/>
       </g>
     </g>
-    <radialGradient id="SVGID_8_" cx="141.8667" cy="71.2093" gradientTransform="matrix(3.970535e-11 -0.9556 1.0212 4.976572e-11 -8.7188 212.7357)" gradientUnits="userSpaceOnUse" r="27.0012">
-      <stop offset="0" style="stop-color:#FFFFFF;stop-opacity:0.9"/>
-      <stop offset="0.1228" style="stop-color:#E7E7E7;stop-opacity:0.9123"/>
-      <stop offset="0.3833" style="stop-color:#A8A8A8;stop-opacity:0.9383"/>
-      <stop offset="0.7569" style="stop-color:#444444;stop-opacity:0.9757"/>
-      <stop offset="1" style="stop-color:#000000"/>
-    </radialGradient>
-    <ellipse cx="64" cy="72.83" rx="30" ry="21.5" style="clip-path:url(#SVGID_2_);fill:url(#SVGID_8_);"/>
+    <linearGradient id="linearGradient5930">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.9;"
+         offset="0"
+         id="stop5932" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0;"
+         offset="1"
+         id="stop5934" />
+    </linearGradient>
+    <radialGradient
+       xlink:href="#linearGradient5930"
+       id="radialGradient5936"
+       cx="64"
+       cy="72.830002"
+       fx="64"
+       fy="72.830002"
+       r="30"
+       gradientTransform="matrix(1,0,0,0.71666667,0,20.635167)"
+       gradientUnits="userSpaceOnUse" />
+    <ellipse cx="64" cy="72.83" rx="30" ry="21.5" style="clip-path:url(#SVGID_2_);fill:url(#radialGradient5936)"/>
     <g style="clip-path:url(#SVGID_2_);">
       <path d="M18.45,112.37c0.01,0.15,0.01,0.3,0.01,0.45c0,4.1-1.98,7.42-4.41,7.42 c-2.44,0-4.41-3.32-4.41-7.42c0-0.15,0.01-0.3,0.01-0.45c-2.41,1.75-4.02,4.87-4.02,8.45v0.65c0,1.4,0.96,2.54,2.15,2.54h12.54 c1.19,0,2.15-1.13,2.15-2.54v-0.65C22.47,117.24,20.86,114.11,18.45,112.37z" style="fill:#26A69A;"/>
       <path d="M14.05,120.24c9,0,4.41-3.32,4.41-7.42c0-0.15-0.01-0.3-0.01-0.45c-1.28-0.93-2.79-1.48-4.4-1.48 c-1.62,0-3.12,0.55-4.4,1.48c-0.01,0.15-0.01,0.3-0.01,0.45C9.63,116.92,5,120.24,14.05,120.24z" style="fill:#00796B;"/>
