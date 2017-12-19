@@ -46,7 +46,7 @@
     <path d=" M28.85,34.56c5.7-2.21,12.81-2.07,18.88-1.25" style="fill:none;stroke:#C26D00;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"/>
     <g>
       <circle cx="48.55" cy="20.75" r="5.33" style="fill:#FDD835;"/>
-      <ellipse cx="46.49" cy="21.17" rx="2.5" ry="2.5" transform="matrix(0.5421 -0.8403 0.8403 0.5421 3.5005 48.7574)"/>
+      <ellipse cx="46.49" cy="21.17" rx="2.5" ry="2.5" transform="matrix(0.5421 -0.8403 0.8403 0.5421 3.5005 48.7574)" fill="#010101"/>
     </g>
     <g>
       <g>
