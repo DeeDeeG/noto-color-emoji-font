@@ -31,11 +31,11 @@
     <g>
       <g>
         <circle cx="50.27" cy="36.47" r="7" style="fill:#FFFFFF;"/>
-        <ellipse cx="50.27" cy="36.47" rx="4.05" ry="4.05" transform="matrix(0.9775 -0.2108 0.2108 0.9775 -6.5586 11.4193)"/>
+        <ellipse cx="50.27" cy="36.47" rx="4.05" ry="4.05" transform="matrix(0.9775 -0.2108 0.2108 0.9775 -6.5586 11.4193)" fill="#010101"/>
       </g>
       <g>
         <circle cx="75.73" cy="36.47" r="7" style="fill:#FFFFFF;"/>
-        <ellipse cx="75.73" cy="36.47" rx="4.05" ry="4.05" transform="matrix(0.9775 -0.2108 0.2108 0.9775 -5.9863 16.7863)"/>
+        <ellipse cx="75.73" cy="36.47" rx="4.05" ry="4.05" transform="matrix(0.9775 -0.2108 0.2108 0.9775 -5.9863 16.7863)" fill="#010101"/>
       </g>
     </g>
   </g>

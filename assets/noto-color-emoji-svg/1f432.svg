@@ -66,7 +66,7 @@
     <g>
       <path d="M55.79,49.17c0,0-8.46,10.15-12.14,10.71s-7.11-1.97-7.67-5.65c-0.56-3.68,1.97-7.11,5.65-7.67 S55.79,49.17,55.79,49.17z" style="fill:#FFFFFF;"/>
       <ellipse cx="41.36" cy="53.57" rx="4.89" ry="4.89" style="fill:#40C4FF;" transform="matrix(0.9887 -0.1498 0.1498 0.9887 -7.5598 6.8013)"/>
-      <ellipse cx="40.11" cy="53.49" rx="3.18" ry="3.18" transform="matrix(0.5932 -0.8051 0.8051 0.5932 -26.7465 54.0516)"/>
+      <ellipse cx="40.11" cy="53.49" rx="3.18" ry="3.18" transform="matrix(0.5932 -0.8051 0.8051 0.5932 -26.7465 54.0516)" fill="#010101"/>
     </g>
     <linearGradient id="SVGID_9_" gradientTransform="matrix(1.0699 0.2845 -0.4013 0.9775 15.6269 -14.1251)" gradientUnits="userSpaceOnUse" x1="42.6211" x2="57.3014" y1="45.8523" y2="45.8523">
       <stop offset="0" style="stop-color:#00AD27"/>

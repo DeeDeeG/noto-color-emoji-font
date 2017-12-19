@@ -12,9 +12,9 @@
       </g>
       <g>
         <ellipse cx="44.71" cy="66.17" rx="11.26" ry="21.7" style="fill:#404040;"/>
-        <ellipse cx="41.97" cy="66.49" rx="8.52" ry="19.88"/>
+        <ellipse cx="41.97" cy="66.49" rx="8.52" ry="19.88" fill="#010101"/>
         <ellipse cx="83.29" cy="66.17" rx="11.26" ry="21.7" style="fill:#404040;"/>
-        <ellipse cx="80.55" cy="66.49" rx="8.52" ry="19.88"/>
+        <ellipse cx="80.55" cy="66.49" rx="8.52" ry="19.88" fill="#010101"/>
       </g>
     </g>
   </g>
