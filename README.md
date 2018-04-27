@@ -95,11 +95,11 @@ The `Noto Sans`/`Noto Serif` and `Roboto` font families conflict far less than `
 Install for the current user without root:
 ```sh
 # 1. Download the latest version
-wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.0-noto/NotoColorEmoji-SVGinOT-Linux-1.0.tar.gz
+wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.1-noto/NotoColorEmoji-SVGinOT-Linux-1.1.tar.gz
 # 2. Uncompress the file
-tar zxf NotoColorEmoji-SVGinOT-Linux-1.0.tar.gz
+tar zxf NotoColorEmoji-SVGinOT-Linux-1.1.tar.gz
 # 3. Run the installer
-cd NotoColorEmoji-SVGinOT-Linux-1.0
+cd NotoColorEmoji-SVGinOT-Linux-1.1
 ./install.sh
 ```
 
@@ -135,10 +135,10 @@ emerge twemoji-color-font
 Both SVGinOT versions are available from releases:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
-1. `NotoColorEmoji-SVGinOT-1.0.zip` - The regular version of the font
+1. `NotoColorEmoji-SVGinOT-1.1.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but OS X will
    default to the `Apple Color Emoji` font for emojis.
-2. `NotoColorEmoji-SVGinOT-OSX-1.0.zip` - A hack to replace the `Apple
+2. `NotoColorEmoji-SVGinOT-OSX-1.1.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 
@@ -159,14 +159,14 @@ Chrome will use the fallback black and white emoji.*
 ## Install on Windows
 
 There are two install options for Windows. Both SVGinOT versions are available
-from releases: https://github.com/eosrei/emojione-color-font/releases
+from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
 ### Standard install
 
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
 font for emoji characters. Download:
-https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3.zip
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.1-noto/NotoColorEmoji-SVGinOT-1.1.zip
 
 ### Replace the default Windows emoji fonts
 
@@ -179,11 +179,11 @@ in Windows 7, just Segoe UI Symbol) and install them for you. Running the
 install script requires both [Python][16] and pip in the PATH.
 
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
-2. Start the installer, select "Add Python 3.5 to PATH" and finish the install process.
-3. Download EmojiOne Color Windows package from releases:
-https://github.com/eosrei/emojione-color-font/releases/download/v1.3/EmojiOneColor-SVGinOT-1.3-Win.zip
+2. Start the installer, select "Add Python 3.6 to PATH" and finish the install process.
+3. Download Noto Color Emoji Windows package from releases:
+https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.1-noto/NotoColorEmoji-SVGinOT-Win-1.1.zip
 4. Uncompress the file.
-5. Open the new EmojiOneColor directory.
+5. Open the new NotoColorEmoji directory.
 7. Run install.cmd. *Note: This will take some time.*
 8. Install both new fonts when requested.
 9. Done!
@@ -236,7 +236,8 @@ sudo apt-get install devscripts
 make package -j 4
 #
 # "make package" will run without devscripts installed, and it will
-# make the Linux and MacOS packages, but it won't build the .deb package.
+# make the Linux, MacOS and Windows packages, but it won't build the
+# .deb package.
 #
 # It's good to run "make package" before running a simple "make," if
 # you want the packages, or else you will find your computer
