@@ -3,10 +3,10 @@ SETLOCAL
 
 SET MS_EMOJI_FONT_PATH="%SystemRoot%\Fonts\seguiemj.ttf"
 SET MS_FONT_PATH="%SystemRoot%\Fonts\seguisym.ttf"
-SET EMOJI_FONT_PATH="%CD%\EmojiOneColor-SVGinOT.ttf"
-SET FINAL_EMJ_FONT_PATH_NO_QUOTES=%CD%\Segoe UI Emoji with EmojiOne.ttf
+SET EMOJI_FONT_PATH="%CD%\NotoColorEmoji-SVGinOT.ttf"
+SET FINAL_EMJ_FONT_PATH_NO_QUOTES=%CD%\Segoe UI Emoji with Noto.ttf
 SET FINAL_EMJ_FONT_PATH="%FINAL_EMJ_FONT_PATH_NO_QUOTES%"
-SET FINAL_FONT_PATH_NO_QUOTES=%CD%\Segoe UI Symbol with EmojiOne.ttf
+SET FINAL_FONT_PATH_NO_QUOTES=%CD%\Segoe UI Symbol with Noto.ttf
 SET FINAL_FONT_PATH="%FINAL_FONT_PATH_NO_QUOTES%"
 
 ECHO Checking if Segoe UI Emoji is installed
@@ -52,14 +52,15 @@ WHERE ttx /q || (
 
 PUSHD %TEMP%
 IF EXIST %MS_EMOJI_FONT_PATH% (
-    ECHO Creating new Segoe UI Emoji font from EmojiOne
+    ECHO Creating new Segoe UI Emoji font from Noto Color Emoji
     ttx -t "name" -o "emjname.ttx" %MS_EMOJI_FONT_PATH% || GOTO :ERROR
     ttx -o %FINAL_EMJ_FONT_PATH% -m %EMOJI_FONT_PATH% "emjname.ttx" || GOTO :ERROR
     DEL "emjname.ttx"
 )
 
-ECHO Creating new Segoe UI Symbol font from EmojiOne
-REM Merge Segoe UI Symbol into EmojiOne, this keeps emoji one's glyph ids intact
+ECHO Creating new Segoe UI Symbol font from Noto Color Emoji
+REM Merge Segoe UI Symbol into Noto Color Emoji -
+REM this keeps Noto Color Emoji's glyph ids intact
 REM for the 'SVG ' table data
 pyftmerge %EMOJI_FONT_PATH% %MS_FONT_PATH%
 ECHO Dumping SVG emojis
@@ -86,13 +87,14 @@ IF EXIST %MS_EMOJI_FONT_PATH% (
     ECHO %MS_FONT_PATH%
     ECHO and
     ECHO %MS_EMOJI_FONT_PATH%
+    ECHO They are not overwritten, and can be reinstalled with uninstall.cmd
 ) ELSE (
     ECHO The font is now saved in
     ECHO %FINAL_FONT_PATH%
     ECHO After installation, the original font will still be located at
     ECHO %MS_FONT_PATH%
+    ECHO It is not overwritten, and can be reinstalled with uninstall.cmd
 )
-ECHO It is not overwritten, and can be reinstalled with uninstall.cmd
 ECHO To finish installation, the font will be opened for you to install.
 ECHO.
 ECHO If the font is in a network path, copy to a local disk and

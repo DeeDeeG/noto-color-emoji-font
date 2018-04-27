@@ -1,4 +1,4 @@
-# Makefile to create all versions of the Twitter Color Emoji SVGinOT font
+# Makefile to create all versions of the Noto Color Emoji SVGinOT font
 # Run with: make -j [NUMBER_OF_CPUS]
 
 # Use Linux Shared Memory to avoid wasted disk writes. Use /tmp to disable.
@@ -97,7 +97,7 @@ copy-extra: build/svg-bw
 	cp $(SVG_EXTRA_BW)/* build/svg-bw/
 
 # Create black SVG traces of the color SVGs to use as glyphs.
-# 1. Make the EmojiOne SVG into a PNG with Inkscape
+# 1. Make the Noto Color Emoji SVG into a PNG with Inkscape
 # 2. Make the PNG into a BMP with ImageMagick and add margin by increasing the
 #    canvas size to allow the outer "stroke" to fit.
 # 3. Make the BMP into a Edge Detected PGM with mkbitmap
