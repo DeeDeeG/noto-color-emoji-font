@@ -182,37 +182,44 @@ Requires:
 
 [15]: https://github.com/13rac1/scfbuild
 
-Setup and build on Ubuntu 14.04 LTS:
+Setup on Ubuntu 14.04 LTS:
 ```sh
 sudo add-apt-repository ppa:fontforge/fontforge
 sudo apt-get update
 sudo apt-get install inkscape potrace npm nodejs nodejs-legacy fontforge \
 python-fontforge python-pip python-yaml imagemagick git make
 sudo npm install -g svgo
-sudo pip install fonttools
+pip install fonttools
+```
+
+Setup on Ubuntu 18.04 LTS:
+```sh
+sudo apt-get install inkscape potrace npm nodejs fontforge \
+python-fontforge python-pip python-yaml imagemagick git make
+sudo npm install -g svgo
+pip install fonttools
+```
+
+Build (any Ubuntu release):
+```sh
 git clone https://github.com/DeeDeeG/noto-color-emoji-font.git
 cd noto-color-emoji-font
 git clone https://github.com/13rac1/scfbuild.git SCFBuild
-# Type a number after the "-j" in the following command to control number of threads.
-# The build involves an extremely large number of short tasks (several per glyph).
-# Due to starting and stopping on each thread, CPU usage can be well below 100%, for strong processors.
-# If your machine is powerful, a higher number of threads per-core will be faster and use more of your CPU power.
-# basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
+# Type a number after the "-j" in the following command
+# to control the number of threads.
+# Rule of thumb: if you have a dual or quad core processor, use "-j 4".
+# If you have more than 4 cores, use "-j [your-number-of-cpu-cores-here]"
 make -j 4
+#
+#
 # If you want to build all the packages (totally optional), run:
-sudo apt-get install devscripts
-# Which allows you to build the DEB_PACKAGE target, and:
 make package -j 4
-#
-# "make package" will run without devscripts installed, and it will
-# make the Linux, macOS and Windows packages, but it won't build the
-# .deb package.
-#
-# It's good to run "make package" before running a simple "make," if
-# you want the packages, or else you will find your computer
-# re-building the ttf font files in order to satisfy the dependencies
-# of the "package" build target.
 ```
+
+(It's good to run "make package" if you want the packages,
+before / rather than running a basic "make" command,
+or else you will find your computer re-building the ttf font files
+in order to satisfy the dependencies of the "package" build target.)
 
 ## License
 
