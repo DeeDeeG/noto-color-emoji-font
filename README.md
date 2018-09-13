@@ -1,14 +1,12 @@
 # Noto Color Emoji SVGinOT Font
 
-Major credit to eosrei (and various other contributors). This is a lightly modified version of his [`twemoji-color-font`][1] repo.
+Much credit to Brad Erickson (@13rac1) and various other upstream contributors. This is a fork derived from his [`twemoji-color-font`][1] repo.
 
-(Legal note: he has not commented on this project, to my knowledge, and my crediting him does not imply his endorsement. /legalese)
+_(Please note that giving credit in this way should not be taken as implying his or anyone else's endorsement of this repo.)_
 
 ## Intro
 
-This is a color and B&W emoji SVGinOT font, built from the latest version of the [Noto Color Emoji][2] artwork with support for most [ZWJ][3] sequences, [skin tone diversity][4] and [country flags][5] (not all flags supported). Also comes with the recent gendered professions emoji, such as judge, airplane pilot, and cook.
-
-This is essentially a recreation of the font from [Nougat][6], minus most of the flags.
+This is a color / B&W emoji SVGinOT font, built from the [Noto Color Emoji][2] artwork in multiple editions (Lollipop, Nougat, etc). See sub-folders for details on specific editions.
 
 The font works in all operating systems, but will *currently* only show color
 emoji in Firefox, Thunderbird, Photoshop CC 2017, and Windows Edge V38.14393+.
@@ -16,7 +14,7 @@ This is not a limitation of the font, but of the operating systems and
 applications. Regular B&W outline emoji are included for backwards/fallback
 compatibility.
 
-[Do you prefer EmojiOne graphics?][7] (repo by eosrei and various contributors)
+[Do you prefer EmojiOne graphics?][7] (repo by Brad Erickson and various contributors.) (No-longer supported. For an up-to-date emoji font, see [Twemoji Color Font][1])
 
 [1]: https://github.com/eosrei/twemoji-color-font
 [2]: https://github.com/googlei18n/noto-emoji
@@ -38,14 +36,14 @@ compatibility.
 
 ## Examples
 
-Demo in Firefox on Linux.
+Demo of the Nougat release, in Firefox on Linux.
 ![Firefox color emoji in Linux](images/notocoloremoji-font-demo.png?raw=true)
 
 ## What is SVGinOT?
-*SVG in Open Type* is a standard by Adobe and Mozilla for color OpenType
-and Open Font Format fonts. It allows font creators to embed complete SVG files
-within a font enabling full color and even animations. There are more details
-in the [SVGinOT proposal][8] and the [OpenType SVG table specifications][9].
+*SVG in OpenType* is a standard by Adobe and Mozilla for color OpenType fonts.
+It allows font creators to embed complete SVG files within a font,
+enabling full color, and even animations. There are more details
+in the [SVGinOT proposal][8] and the [OpenType SVG table specification][9].
 
 SVGinOT Font demos (Firefox only):
 
@@ -57,7 +55,7 @@ SVGinOT Font demos (Firefox only):
 [9]: https://www.microsoft.com/typography/otspec/svg.htm
 
 ## Linux Details
-The font can be installed for a user or system-wide. Get the latest version
+The font can be installed for individual users, or system-wide. Get the latest version
 from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
 *Note: This requires `Bitstream Vera` is installed and will change your
@@ -100,10 +98,10 @@ Open the font in a font viewer program and press install. Websites and applicati
 
 Install for the current user without root:
 ```sh
-# 1. Download the latest version
+# 1. Download the desired version, e.g.:
 wget https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 2. Uncompress the file
-tar zxf NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
+tar -zxf NotoColorEmoji-SVGinOT-Linux-1.2.tar.gz
 # 3. Run the installer
 cd NotoColorEmoji-SVGinOT-Linux-1.2
 ./install.sh
@@ -113,10 +111,10 @@ cd NotoColorEmoji-SVGinOT-Linux-1.2
 Both SVGinOT versions are available from releases:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
-1. `NotoColorEmoji-SVGinOT-1.2.zip` - The regular version of the font
+1. `NotoColorEmoji-SVGinOT-1.x.zip` - The regular version of the font
    installs like any other font and can be specifically selected, but macOS will
-   default to the `Apple Color Emoji` font for emojis.
-2. `NotoColorEmoji-SVGinOT-OSX-1.2.zip` - A hack to replace the `Apple
+   default to the `Apple Color Emoji` font for emoji.
+2. `NotoColorEmoji-SVGinOT-OSX-1.x.zip` - A hack to replace the `Apple
    Color Emoji` font by [using the same internal name][14]. Install and accept
    the warning in Font Book.
 
@@ -134,7 +132,9 @@ from releases: https://github.com/DeeDeeG/noto-color-emoji-font/releases
 
 The regular version of the font installs like any other font and can be
 specifically selected, but Windows will default to the `Segoe UI Emoji`
-font for emoji characters. Download:
+font for emoji characters.
+
+Download the standard (zip) package of the desired edition, e.g.:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-1.2.zip
 
 ### Replace the default Windows emoji fonts
@@ -148,8 +148,8 @@ in Windows 7, just Segoe UI Symbol) and install them for you. Running the
 install script requires both [Python][16] and pip in the PATH.
 
 1. Download the most recent Python 3 for Windows: https://www.python.org/downloads/windows/
-2. Start the installer, select "Add Python 3.6 to PATH" and finish the install process.
-3. Download Noto Color Emoji Windows package from releases:
+2. Start the installer, select "Add Python 3.x to PATH" and finish the install process.
+3. Download Noto Color Emoji Windows package from releases, _e.g._:
 https://github.com/DeeDeeG/noto-color-emoji-font/releases/download/v1.2-nougat/NotoColorEmoji-SVGinOT-Win-1.2.zip
 4. Uncompress the file.
 5. Open the new NotoColorEmoji directory.
@@ -178,9 +178,9 @@ Requires:
 * FontForge 20160405+
 * SVGO
 * make
-* [SCFBuild][15] *(Created by eosrei for [EmojiOne Color][7]!)*
+* [SCFBuild][15] *(Created by Brad Erickson for [EmojiOne Color][7]!)*
 
-[15]: https://github.com/eosrei/scfbuild
+[15]: https://github.com/13rac1/scfbuild
 
 Setup and build on Ubuntu 14.04 LTS:
 ```sh
@@ -192,10 +192,10 @@ sudo npm install -g svgo
 sudo pip install fonttools
 git clone https://github.com/DeeDeeG/noto-color-emoji-font.git
 cd noto-color-emoji-font
-git clone https://github.com/eosrei/scfbuild.git SCFBuild
+git clone https://github.com/13rac1/scfbuild.git SCFBuild
 # Type a number after the "-j" in the following command to control number of threads.
 # The build involves an extremely large number of short tasks (several per glyph).
-# Due to starting and stoping on each thread, CPU usage can be well below 100%, for strong processors.
+# Due to starting and stopping on each thread, CPU usage can be well below 100%, for strong processors.
 # If your machine is powerful, a higher number of threads per-core will be faster and use more of your CPU power.
 # basic processors: 1 thread per core is best. Strong processors: at least 2 threads per core is best.
 make -j 4
