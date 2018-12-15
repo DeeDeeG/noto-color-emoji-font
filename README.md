@@ -37,7 +37,7 @@ compatibility.
 ## Examples
 
 Demo of the Nougat release, in Firefox on Linux.
-![Firefox color emoji in Linux](images/notocoloremoji-font-demo.png?raw=true)
+![Firefox color emoji in Linux](Nougat/images/notocoloremoji-font-demo.png?raw=true)
 
 ## What is SVGinOT?
 *SVG in OpenType* is a standard by Adobe and Mozilla for color OpenType fonts.
